@@ -1,0 +1,234 @@
+/* PR Visa Sections Styles */
+.pr-visa-sections {
+    background-color: #ffffff;
+  }
+  
+  /* Australia PR Section */
+  .australia-pr {
+    background: linear-gradient(rgba(11, 31, 71, 0.9), rgba(11, 31, 71, 0.9)),
+      url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-22%20at%2010.41.25%E2%80%AFPM-s4Po1pjW4wRwIkcyPKXjz60oxbJaqM.png");
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    color: #ffffff;
+  }
+  
+  .pr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .pr-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .country-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .pr-header h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .pr-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .read-more {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #ffd700;
+    color: #0b1f47;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  
+  .read-more:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Calculator Form */
+  .calculator-form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .calculator-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .highlight {
+    color: #ffd700;
+  }
+  
+  .point-calculator .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .point-calculator input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 5px;
+  }
+  
+  .point-calculator input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .captcha {
+    position: relative;
+  }
+  
+  .captcha-container {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .captcha-image {
+    height: 40px;
+    border-radius: 5px;
+  }
+  
+  .refresh-captcha {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffd700;
+    color: #0b1f47;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Canada PR Section */
+  .canada-pr {
+    background-color: #ee3124;
+    padding: 60px 0;
+    color: #ffffff;
+  }
+  
+  .calculator-section {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .crs-calculator {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .crs-calculator h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .crs-calculator p {
+    margin-bottom: 10px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #0b1f47;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+  }
+  
+  .pnp-program {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: #0b1f47;
+  }
+  
+  .pnp-program h3 {
+    color: #ee3124;
+    margin-bottom: 20px;
+  }
+  
+  .pnp-content {
+    background-color: #0b1f47;
+    padding: 20px;
+    border-radius: 5px;
+    color: #ffffff;
+  }
+  
+  .pnp-content h4 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .express-entry {
+    display: block;
+    font-size: 1.2rem;
+    color: #ffd700;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .pr-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .pr-header h2 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .calculator-form,
+    .crs-calculator,
+    .pnp-program {
+      padding: 20px;
+    }
+  
+    .pr-header h2 {
+      font-size: 1.5rem;
+    }
+  
+    .crs-calculator h3 {
+      font-size: 1.5rem;
+    }
+  }
