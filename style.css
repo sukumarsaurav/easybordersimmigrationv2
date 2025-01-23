@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #002147;
+    --primary-color: #002349;
     --secondary-color: #ff0000;
-    --accent-color: #ffd700;
+    --accent-color: #957C3D;
     --text-color: #333;
     --white: #ffffff;
   }
@@ -542,6 +542,11 @@
     .top-bar .container {
       flex-direction: column;
       gap: 10px;
+    }
+    .top-bar {
+      background-color: var(--white);
+      padding:0px;
+      border-bottom: 1px solid #eee;
     }
   
     .action-buttons {

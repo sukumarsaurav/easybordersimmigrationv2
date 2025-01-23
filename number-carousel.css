@@ -1,0 +1,33 @@
+.number-carousel {
+    background-color:#ffd700;
+    padding: 6px 15px;
+    overflow: hidden;
+    width:100%
+  }
+  
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    white-space: nowrap;
+  }
+  
+  .carousel-track:hover {
+    animation-play-state: paused;
+  }
+  
+  .phone-number {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: color 0.3s ease;
+  }
+  
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Adjust based on the number of items */
+  }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .number-carousel {
+  background-color: #002147;
+  padding: 8px 15px;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 200px;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  white-space: nowrap;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.phone-number {
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+  transition: color 0.3s ease;
+}
+
+    </style>
+</head>
+<body>
+    <div class="contact-info">
+        <span>For FREE Consultation</span>
+        <div class="number-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <a href="tel:+918586878899" class="phone-number">+91 858 687 8899</a>
+                    <a href="tel:+919659645927" class="phone-number">+91 965 964 5927</a>
+                    <a href="tel:+919953747187" class="phone-number">+91 995 374 7187</a>
+                    <a href="tel:+917838000996" class="phone-number">+91 783 800 0996</a>
+                    <a href="tel:+13154651248" class="phone-number">+1 (315) 465-1248</a>
+                    <a href="tel:+17869495757" class="phone-number">+1 (786) 949-5757</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+  const tabButtons = document.querySelectorAll(".tab-btn")
+  const tabPanes = document.querySelectorAll(".tab-pane")
+
+  function switchTab(tabId) {
+    // Remove active class from all buttons and panes
+    tabButtons.forEach((btn) => btn.classList.remove("active"))
+    tabPanes.forEach((pane) => pane.classList.remove("active"))
+
+    // Add active class to selected button and pane
+    const selectedButton = document.querySelector(`[data-tab="${tabId}"]`)
+    const selectedPane = document.getElementById(tabId)
+
+    if (selectedButton && selectedPane) {
+      selectedButton.classList.add("active")
+      selectedPane.classList.add("active")
+    }
+  }
+
+  // Add click event listeners to tab buttons
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const tabId = button.getAttribute("data-tab")
+      switchTab(tabId)
+    })
+  })
+
+  // Clone phone numbers for smooth infinite scroll
+  const track = document.querySelector(".carousel-track")
+  if (track) {
+    //Check if the element exists
+    const numbers = track.innerHTML
+    track.innerHTML = numbers + numbers // Duplicate content for seamless loop
+  }
+})
+    </script>
+</body>
+</html>
