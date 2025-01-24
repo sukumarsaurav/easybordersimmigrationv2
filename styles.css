@@ -27,7 +27,7 @@
   /* Top Bar */
   .top-bar {
     background-color: var(--white);
-    padding: 10px 0;
+    padding: 0px;
     border-bottom: 1px solid #eee;
   }
   
