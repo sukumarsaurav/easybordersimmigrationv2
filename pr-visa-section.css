@@ -6,7 +6,7 @@
   /* Australia PR Section */
   .australia-pr {
     background: linear-gradient(rgba(11, 31, 71, 0.9), rgba(11, 31, 71, 0.9)),
-      url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-22%20at%2010.41.25%E2%80%AFPM-s4Po1pjW4wRwIkcyPKXjz60oxbJaqM.png");
+      url("src/images/flag/ australia cta.png");
     background-size: cover;
     background-position: center;
     padding: 60px 0;
@@ -134,6 +134,8 @@
   /* Canada PR Section */
   .canada-pr {
     background-color: #ee3124;
+    background: linear-gradient(rgba(255, 0, 0, 0.9), rgba(219, 8, 8, 0.9)),
+    url("src/images/studyvisa/canada cta.png");
     padding: 60px 0;
     color: #ffffff;
   }

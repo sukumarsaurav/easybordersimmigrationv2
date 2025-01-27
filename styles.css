@@ -107,7 +107,10 @@
     color: var(--primary-color);
     font-weight: 500;
   }
-  
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #ffd700;
+  }
   .mobile-menu-button {
     display: none;
     background: none;
@@ -119,7 +122,7 @@
   
   /* Hero Section */
   .hero {
-    background-image: url("https://sjc.microlink.io/UMSp0B6cHA5pxHP1WiPHxt9LV3zA71uULvSXQXsJWarjwFzrKu5BUYrUqMvsdR-L9XzpsaWuF95GQMVly6KKHw.jpeg");
+    
     background-size: cover;
     background-position: center;
     height: 500px;
@@ -506,7 +509,10 @@
     color: var(--white);
     text-decoration: none;
   }
-  
+  .social-sidebar a:hover {
+    background-color: #ffd700;
+    transform: translateX(-5px);
+  }
   .social-sidebar .facebook {
     background-color: #3b5998;
   }
