@@ -58,6 +58,9 @@ $total_points = calculatePoints($_POST);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Points Calculator Result</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="number-carousel.css">
+    <link rel="stylesheet" href="studyvisastyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .result-container {
@@ -97,6 +100,53 @@ $total_points = calculatePoints($_POST);
     </style>
 </head>
 <body>
+        <!-- Top Bar -->
+        <div class="top-bar">
+        <div class="number-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <a href="tel:+918586878899" class="phone-number">+91 858 687 8899</a>
+                    <a href="tel:+919659645927" class="phone-number">+91 965 964 5927</a>
+                    <a href="tel:+919953747187" class="phone-number">+91 995 374 7187</a>
+                    <a href="tel:+917838000996" class="phone-number">+91 783 800 0996</a>
+                    <a href="tel:+13154651248" class="phone-number">+1 (315) 465-1248 (USA)</a>
+                    <a href="tel:+17869495757" class="phone-number">+1 (786) 949-5757 (USA)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="src/images/logo.jpeg" alt="Easy Borders Immigration Logo">
+            </div>
+            <nav>
+                <button class="mobile-menu-button"><i class="fas fa-bars"></i></button>
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="english-preparation-test.html">English Test Preparation</a></li>
+                    <li><a href="study-visa.html">Study Visa</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="sidebar-menu">
+            <button class="close-menu-button">&times;</button>
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="english-preparation-test.html">English Test Preparation</a></li>
+                <li><a href="study-visa.html">Study Visa</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
     <div class="result-container">
         <h2>Your Immigration Points Result</h2>
         
@@ -121,5 +171,135 @@ $total_points = calculatePoints($_POST);
             </a>
         </div>
     </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Career Counselling</a></li>
+                        <li><a href="#">CAPS Notes</a></li>
+                        <li><a href="#">English Test Preparation</a></li>
+                        <li><a href="#">Study Visa</a></li>
+                        <li><a href="#">Interview Preparation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Study Visa -->
+                <div class="footer-col">
+                    <h3>Study Visa</h3>
+                    <ul>
+                        <li><a href="study-visa/austrilia.html">Australia</a></li>
+                        <li><a href="study-visa/canada.html">Canada</a></li>
+                        <li><a href="study-visa/new-zealand.html">New Zealand</a></li>
+                        <li><a href="study-visa/singapore.html">Singapore</a></li>
+                        <li><a href="study-visa/germany.html">Germany</a></li>
+                        <li><a href="study-visa/switzerland.html">Switzerland</a></li>
+                        <li><a href="study-visa/france.html">France</a></li>
+                    </ul>
+                </div>
+
+                <!-- English Test Preparation -->
+                <div class="footer-col">
+                    <h3>English Test Preparation</h3>
+                    <ul>
+                        <li><a href="english-preparation-test/ilets.html">IELTS</a></li>
+                        <li><a href="english-preparation-test/pte.html">PTE</a></li>
+                        <li><a href="english-preparation-test/cael.html">CAEL</a></li>
+                        <li><a href="english-preparation-test/celpip.html">CELPIP</a></li>
+                        <li><a href="english-preparation-test/oet.html">OET</a></li>
+                        <li><a href="english-preparation-test/tofel.html">TOEFL</a></li>
+                        <li><a href="english-preparation-test/spoken-english-and-personality-development.html">Spoken
+                                English & Personality Development</a></li>
+                    </ul>
+                    <h3 class="migration-title">Migration</h3>
+                    <ul>
+                        <li><a href="migration/australia.html">Australia</a></li>
+                        <li><a href="migration/canada.html">Canada</a></li>
+                        <li><a href="migration/germany-job-search-visa.html">Germany Job Search Visa</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Branches -->
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p>WZ-481 Shiv Nagar, near Jail Road, New Delhi-110058</p>
+                    </div>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218.87630300551004!2d77.09561940226342!3d28.6291372569422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04a3f7abe5df%3A0x2305c17c54f27f73!2s481%2C%20Pocket%205%2C%20Shiv%20Nagar%2C%20Janakpuri%2C%20New%20Delhi%2C%20Delhi%2C%20110058!5e0!3m2!1sen!2sin!4v1737735011636!5m2!1sen!2sin"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Our Branches -->
+                <div class="footer-col">
+                    <h3>Our Branches</h3>
+                    <div class="branches">
+                        <div class="country">
+                            <img src="/src/images/flag/indian-flag.png" alt="India Flag" class="flag">
+                            <span>INDIA</span>
+                        </div>
+                        <h4>Delhi</h4>
+                        <ul>
+                            <li><a href="/branches/india/delhi/shiv-nagar-branch.html">Shiv Nagar</a></li>
+                        </ul>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>Copyright © 2020 EsayBordersImmigration. All rights reserved</p>
+                    <p>Designed by Suku</p>
+
+                </div>
+                <div class="social-links">
+                    <span>Get Social with us</span>
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Social Media Sidebar -->
+    <div class="social-sidebar">
+        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/+917838000996" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <script src="hero-script.js"></script>
+
+    <script src="script.js"></script>
+    <script src="number-carousel.js"></script>
+</body>
 </body>
 </html> 
