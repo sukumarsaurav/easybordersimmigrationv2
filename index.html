@@ -27,8 +27,8 @@
                     <a href="tel:+919659645927" class="phone-number">+91 965 964 5927</a>
                     <a href="tel:+919953747187" class="phone-number">+91 995 374 7187</a>
                     <a href="tel:+917838000996" class="phone-number">+91 783 800 0996</a>
-                    <a href="tel:+13154651248" class="phone-number">+1 (315) 465-1248</a>
-                    <a href="tel:+17869495757" class="phone-number">+1 (786) 949-5757</a>
+                    <a href="tel:+13154651248" class="phone-number">+1 (315) 465-1248 (USA)</a>
+                    <a href="tel:+17869495757" class="phone-number">+1 (786) 949-5757 (USA)</a>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="carousel-slide">
-                <img src="/src/images/hero/4.png" alt="Hero Image 3">
+                <img src="/src/images/hero/3.png" alt="Hero Image 3">
                 <div class="hero-content">
                     <h1>Achieve Your Dreams</h1>
                     <h2>Get the Best Education</h2>
@@ -524,7 +524,7 @@
                     </div>
                     <div class="calculator-form">
                         <h3>Free Australia Immigration <span class="highlight">Point Calculator</span></h3>
-                        <form action="#" method="POST" class="point-calculator">
+                        <form action="calculate-points.php" method="POST" class="point-calculator">
                             <div class="form-group">
                                 <input type="text" name="name" placeholder="Name" required>
                             </div>
@@ -534,17 +534,72 @@
                             <div class="form-group">
                                 <input type="tel" name="mobile" placeholder="Mobile" required>
                             </div>
-                            <div class="form-group captcha">
-                                <label>Captcha Code</label>
-                                <div class="captcha-container">
-                                    <img src="/src/images/flag/canada-flag.png" alt="Captcha" class="captcha-image">
-                                    <button type="button" class="refresh-captcha">
-                                        <i class="fas fa-sync-alt"></i>
-                                    </button>
-                                </div>
-                                <input type="text" name="captcha" placeholder="Above Captcha Code" required>
+                            
+                            <!-- Age Selection -->
+                            <div class="form-group">
+                                <label>Age</label>
+                                <select name="age" required>
+                                    <option value="">Select Age Range</option>
+                                    <option value="18-24">18-24 years</option>
+                                    <option value="25-32">25-32 years</option>
+                                    <option value="33-39">33-39 years</option>
+                                    <option value="40-44">40-44 years</option>
+                                </select>
                             </div>
-                            <button type="submit" class="submit-btn">SUBMIT</button>
+
+                            <!-- Education -->
+                            <div class="form-group">
+                                <label>Education</label>
+                                <select name="education" required>
+                                    <option value="">Select Education Level</option>
+                                    <option value="graduation">Graduation or Post Graduation</option>
+                                    <option value="phd">PHD</option>
+                                </select>
+                            </div>
+
+                            <!-- Work Experience -->
+                            <div class="form-group">
+                                <label>Work Experience</label>
+                                <select name="experience" required>
+                                    <option value="">Select Experience</option>
+                                    <option value="8+">8 years or more</option>
+                                    <option value="5-7">5-7 years</option>
+                                    <option value="3-4">3-4 years</option>
+                                </select>
+                            </div>
+
+                            <!-- IELTS/PTE Score -->
+                            <div class="form-group">
+                                <label>IELTS/PTE Score</label>
+                                <select name="language_score" required>
+                                    <option value="">Select Score Range</option>
+                                    <option value="6">6+ or 50+</option>
+                                    <option value="7">7+ or 65+</option>
+                                    <option value="8">8+ or 79+</option>
+                                </select>
+                            </div>
+
+                            <!-- Marital Status -->
+                            <div class="form-group">
+                                <label>Marital Status</label>
+                                <select name="marital_status" required>
+                                    <option value="">Select Status</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married (spouse with 6+ bands)</option>
+                                </select>
+                            </div>
+
+                            <!-- State/Region -->
+                            <div class="form-group">
+                                <label>State/Region</label>
+                                <select name="state_region" required>
+                                    <option value="">Select State/Region</option>
+                                    <option value="190">Sub class 190</option>
+                                    <option value="491">Regional-Sub class 491</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Calculate Points</button>
                         </form>
                     </div>
                 </div>
@@ -797,7 +852,7 @@
         <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
         <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
         <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/+917838000996" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
     </div>
     <script src="hero-script.js"></script>
 
