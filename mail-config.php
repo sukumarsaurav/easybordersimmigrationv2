@@ -13,15 +13,15 @@ function sendMail($to, $subject, $message, $from_name = "Easy Borders Immigratio
         $mail->isSMTP();
         $mail->Host       = 'smtp.hostinger.com'; // Replace with your SMTP host
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'info@easybordersimmigration.com'; // Your email
+        $mail->Username   = 'leads@easybordersimmigration.com'; // Your email
         $mail->Password   = 'x[G2Co5o2x?P'; // Your password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         //Recipients
-        $mail->setFrom('info@easybordersimmigration.com', $from_name);
+        $mail->setFrom('leads@easybordersimmigration.com', $from_name);
         $mail->addAddress($to);
-        $mail->addReplyTo('info@easybordersimmigration.com', $from_name);
+        $mail->addReplyTo('leads@easybordersimmigration.com', $from_name);
 
         //Content
         $mail->isHTML(true);

@@ -50,31 +50,51 @@ function calculatePoints($data) {
 
 $total_points = calculatePoints($_POST);
 
-// Send email with user details
-$to = "sukumarsaurav@gmail.com";
-$subject = "New PR Points Calculator Submission";
-$message = "
-<html>
-<head>
-<title>New PR Calculator Submission</title>
-</head>
-<body>
-<h2>User Details:</h2>
-<p>Name: {$_POST['name']}</p>
-<p>Email: {$_POST['email']}</p>
-<p>Mobile: {$_POST['mobile']}</p>
-<p>Total Points: {$total_points}</p>
-</body>
-</html>
-";
+// Replace the existing email sending code with:
+require_once 'mail-config.php';
 
-// Headers for HTML email
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$headers .= "From: {$_POST['email']}" . "\r\n";
+// After require_once 'mail-config.php', add error checking
+if (!file_exists('mail-config.php')) {
+    error_log("mail-config.php not found");
+    die("Mail configuration error");
+}
 
-// Send email
-mail($to, $subject, $message, $headers);
+// Modify the email sending section
+try {
+    // Validate POST data exists
+    if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['mobile'])) {
+        throw new Exception("Required POST data missing");
+    }
+    
+    $to = "inquiry@easybordersimmigration.com";
+    $subject = "New PR Points Calculator Submission";
+    $message = "
+    <html>
+    <head>
+    <title>New PR Calculator Submission</title>
+    </head>
+    <body>
+    <h2>User Details:</h2>
+    <p>Name: {$_POST['name']}</p>
+    <p>Email: {$_POST['email']}</p>
+    <p>Mobile: {$_POST['mobile']}</p>
+    <p>Total Points: {$total_points}</p>
+    </body>
+    </html>
+    ";
+
+    $mail_sent = sendMail($to, $subject, $message);
+    
+    if (!$mail_sent) {
+        error_log("Failed to send email using sendMail() function");
+        // Optionally show user-friendly message
+        echo "<div class='alert alert-warning'>Note: We received your submission but email notification failed.</div>";
+    }
+} catch (Exception $e) {
+    error_log("Error in calculate-points.php: " . $e->getMessage());
+    // Optionally show user-friendly message
+    echo "<div class='alert alert-warning'>An error occurred but your points were calculated.</div>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -416,10 +436,25 @@ mail($to, $subject, $message, $headers);
         <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://wa.me/+917838000996" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <script src="hero-script.js"></script>
-
-    <script src="script.js"></script>
-    <script src="number-carousel.js"></script>
-</body>
+    <script>
+        // Check if elements exist before adding listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load other scripts only after DOM is ready
+            const scripts = [
+                'hero-script.js',
+                'script.js',
+                'number-carousel.js'
+            ];
+            
+            scripts.forEach(script => {
+                const scriptElement = document.createElement('script');
+                scriptElement.src = script;
+                scriptElement.onerror = function() {
+                    console.error(`Failed to load ${script}`);
+                };
+                document.body.appendChild(scriptElement);
+            });
+        });
+    </script>
 </body>
 </html> 
