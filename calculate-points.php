@@ -49,6 +49,32 @@ function calculatePoints($data) {
 }
 
 $total_points = calculatePoints($_POST);
+
+// Send email with user details
+$to = "sukumarsaurav@gmail.com";
+$subject = "New PR Points Calculator Submission";
+$message = "
+<html>
+<head>
+<title>New PR Calculator Submission</title>
+</head>
+<body>
+<h2>User Details:</h2>
+<p>Name: {$_POST['name']}</p>
+<p>Email: {$_POST['email']}</p>
+<p>Mobile: {$_POST['mobile']}</p>
+<p>Total Points: {$total_points}</p>
+</body>
+</html>
+";
+
+// Headers for HTML email
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$headers .= "From: {$_POST['email']}" . "\r\n";
+
+// Send email
+mail($to, $subject, $message, $headers);
 ?>
 
 <!DOCTYPE html>
@@ -64,38 +90,89 @@ $total_points = calculatePoints($_POST);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .result-container {
-            max-width: 600px;
+            max-width: 1200px;
             margin: 50px auto;
             padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .user-card {
             background-color: #fff;
             border-radius: 10px;
+            padding: 30px;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
-        .points {
-            font-size: 48px;
+
+        .user-details {
+            margin-bottom: 30px;
+        }
+
+        .user-details h3 {
             color: #0b1f47;
-            text-align: center;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
-        .contact-options {
+
+        .detail-item {
             display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
         }
-        .contact-btn {
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
+
+        .detail-label {
             font-weight: bold;
+            width: 120px;
+            color: #666;
         }
-        .call-btn {
-            background-color: #0b1f47;
-            color: white;
+
+        .points-display {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            margin-top: 20px;
         }
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
+
+        .contact-form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            color: #0b1f47;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group textarea {
+            height: 120px;
+        }
+
+        @media (max-width: 768px) {
+            .result-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -148,27 +225,70 @@ $total_points = calculatePoints($_POST);
     </header>
 
     <div class="result-container">
-        <h2>Your Immigration Points Result</h2>
-        
-        <div class="points">
-            <?php echo $total_points; ?> Points
+        <!-- Left Side: User Details Card -->
+        <div class="user-card">
+            <div class="user-details">
+                <h3>Your Details</h3>
+                <div class="detail-item">
+                    <span class="detail-label">Name:</span>
+                    <span><?php echo htmlspecialchars($_POST['name']); ?></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Email:</span>
+                    <span><?php echo htmlspecialchars($_POST['email']); ?></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Mobile:</span>
+                    <span><?php echo htmlspecialchars($_POST['mobile']); ?></span>
+                </div>
+            </div>
+
+            <div class="points-display">
+                <h2>Your Immigration Points</h2>
+                <div class="points">
+                    <?php echo $total_points; ?> Points
+                </div>
+                <p class="result-message">
+                    <?php if ($total_points >= 65): ?>
+                        Congratulations! You meet the minimum points requirement for Australian PR.
+                    <?php else: ?>
+                        You currently don't meet the minimum points requirement (65 points) for Australian PR.
+                    <?php endif; ?>
+                </p>
+            </div>
+
+            <div class="contact-options">
+                <a href="tel:+917838000996" class="contact-btn call-btn">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <a href="https://wa.me/+917838000996" class="contact-btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
         </div>
-        
-        <p class="result-message">
-            <?php if ($total_points >= 65): ?>
-                Congratulations! You meet the minimum points requirement for Australian PR.
-            <?php else: ?>
-                You currently don't meet the minimum points requirement (65 points) for Australian PR.
-            <?php endif; ?>
-        </p>
-        
-        <div class="contact-options">
-            <a href="tel:+1234567890" class="contact-btn call-btn">
-                <i class="fas fa-phone"></i> Call Now
-            </a>
-            <a href="https://wa.me/1234567890" class="contact-btn whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
+
+        <!-- Right Side: Contact Form -->
+        <div class="contact-form">
+            <h3>Contact Us</h3>
+            <form action="send-contact.php" method="POST">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="contact_name" required value="<?php echo htmlspecialchars($_POST['name']); ?>">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="contact_email" required value="<?php echo htmlspecialchars($_POST['email']); ?>">
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="contact_phone" required value="<?php echo htmlspecialchars($_POST['mobile']); ?>">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
         </div>
     </div>
 
