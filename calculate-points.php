@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-// Verify captcha
-if (!isset($_POST['captcha']) || $_POST['captcha'] !== $_SESSION['captcha']) {
-    die('Invalid captcha code');
-}
-
 // Calculate points
 function calculatePoints($data) {
     $points = 0;
