@@ -368,20 +368,18 @@ document.addEventListener('DOMContentLoaded', function() {
         return choices;
     }
 
-    // Modify the form submission handler
+    // Update the form submission handler
     document.getElementById('userDetailsForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
         const userChoices = collectUserChoices();
         const formData = new FormData();
 
-        // Add user details
+        // Add user details and choices to formData
         formData.append('name', document.getElementById('name').value);
         formData.append('email', document.getElementById('email').value);
         formData.append('mobile', document.getElementById('mobile').value);
         formData.append('total_points', document.getElementById('totalScore').textContent);
-
-        // Add all choices
         formData.append('age_group', userChoices.age);
         formData.append('education', userChoices.education);
         formData.append('experience', userChoices.experience);
@@ -404,9 +402,26 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert('Thank you! Your assessment has been submitted successfully.');
-                // Optional: redirect to a thank you page
-                // window.location.href = 'thank-you.html';
+                // Hide calculator and show results
+                document.querySelector('.calculator-section').style.display = 'none';
+                const resultsContainer = document.getElementById('resultsContainer');
+                resultsContainer.style.display = 'block';
+                
+                // Update final score
+                document.getElementById('finalScore').textContent = currentScore;
+                
+                // Update score breakdown
+                const breakdownList = document.getElementById('scoreBreakdown');
+                breakdownList.innerHTML = `
+                    <li><span>Age Points:</span> <span>${scores.age}</span></li>
+                    <li><span>Education Points:</span> <span>${scores.education}</span></li>
+                    <li><span>Experience Points:</span> <span>${scores.experience}</span></li>
+                    <li><span>English Proficiency:</span> <span>${scores.english}</span></li>
+                    <li><span>Additional Points:</span> <span>${scores.additional}</span></li>
+                `;
+
+                // Scroll to results
+                resultsContainer.scrollIntoView({ behavior: 'smooth' });
             } else {
                 alert('There was an error submitting your assessment. Please try again.');
             }
