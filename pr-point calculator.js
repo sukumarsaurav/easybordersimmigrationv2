@@ -3,9 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextButton = document.querySelector('.next-btn');
     const backButton = document.querySelector('.back-btn');
     const totalScore = document.getElementById('totalScore');
-    let currentScore = 25; // Default score for step one
+    let currentScore = 0; // Changed from 25 to 0
     let currentStep = 1;
     let currentQuestion = 1;
+    let scores = {
+        age: 0,
+        education: 0,
+        experience: 0,
+        english: 0,
+        marital: 0,
+        additional: 0
+    };
 
     // Remove duplicate navigation buttons and keep only the main ones
     const navigationButtons = document.querySelector('.calculator-content > .navigation-buttons');
@@ -182,99 +190,148 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updateScore() {
-        const selectedButton = document.querySelector('.option-btn.selected');
-        let ageScore = 0;
+        const selectedButton = document.querySelector(`#step${currentStep} .option-btn.selected`);
+        let points = 0;
 
         if (currentStep === 1) {
             if (selectedButton) {
-                switch (selectedButton.textContent) {
+                switch (selectedButton.textContent.trim()) {
                     case '18 - 24':
-                        ageScore = 25;
+                        points = 25;
                         break;
                     case '25 - 32':
-                        ageScore = 30;
+                        points = 30;
                         break;
                     case '33 - 39':
-                        ageScore = 25;
+                        points = 25;
                         break;
                     case '40 - 44':
-                        ageScore = 15;
+                        points = 15;
                         break;
                 }
             }
-            currentScore = ageScore; // Set current score based on age selection
+            scores.age = points;
         } else if (currentStep === 2) {
             if (selectedButton) {
-                switch (selectedButton.textContent) {
+                switch (selectedButton.textContent.trim()) {
                     case 'PHD':
-                        ageScore = 20;
+                        points = 20;
                         break;
                     case 'Masters':
-                        ageScore = 15;
+                        points = 15;
                         break;
                     case 'Diploma after Bachelors':
-                        ageScore = 10;
+                        points = 10;
                         break;
                     case 'Bachelors':
-                        ageScore = 15;
+                        points = 15;
                         break;
                     case 'Diploma after Secondary':
-                        ageScore = 10;
+                        points = 10;
                         break;
                 }
             }
-            currentScore += ageScore; // Add qualification score to current score
+            scores.education = points;
         } else if (currentStep === 3) {
             if (selectedButton) {
-                switch (selectedButton.textContent) {
+                switch (selectedButton.textContent.trim()) {
                     case '8 years or more':
-                        ageScore = 15;
+                        points = 15;
                         break;
                     case '5 - 7 years':
-                        ageScore = 10;
+                        points = 10;
                         break;
                     case '3 - 4 years':
-                        ageScore = 5;
+                        points = 5;
                         break;
                     case 'Less than 3 years':
-                        ageScore = 0;
+                        points = 0;
                         break;
                 }
             }
-            currentScore += ageScore; // Add work experience score to current score
+            scores.experience = points;
         } else if (currentStep === 4) {
             if (selectedButton) {
-                switch (selectedButton.textContent) {
+                switch (selectedButton.textContent.trim()) {
                     case 'Superior English (Excellent)':
-                        ageScore = 20;
+                        points = 20;
                         break;
                     case 'Proficient English (Very Good)':
-                        ageScore = 10;
+                        points = 10;
                         break;
                     case 'Competent English (Good)':
-                        ageScore = 0;
+                        points = 0;
                         break;
                 }
             }
-            currentScore += ageScore; // Add English proficiency score to current score
+            scores.english = points;
         } else if (currentStep === 5) {
             if (selectedButton) {
-                switch (selectedButton.textContent) {
+                switch (selectedButton.textContent.trim()) {
                     case 'Married':
-                        ageScore = 0; // Married has 0 points
+                        points = 0;
                         break;
                     case 'Single':
-                        ageScore = 10; // Single has 10 points
+                        points = 10;
                         break;
                 }
             }
-            currentScore += ageScore; // Add marital status score to current score
+            scores.marital = points;
         } else if (currentStep === 6) {
-            // Handle scoring for questions in step 6 if needed
-            // This can be implemented based on the specific requirements for each question
+            // Handle scoring for questions in step 6
+            const questionPoints = {
+                question1: {
+                    '8 years or More': 20,
+                    '5 to 7 years': 15,
+                    '3 to 4 years': 10,
+                    '1 to 2 years': 5,
+                    'Less than 1 year': 0
+                },
+                question2: { 'Yes': 5, 'No': 0 },
+                question3: { 'Yes': 10, 'No': 0 },
+                question4: { 'Yes': 5, 'No': 0 },
+                question5: { 'Yes': 5, 'No': 0 },
+                question6: {
+                    'State/Territory (Subclass 190)': 5,
+                    'Regional State (Subclass 491)': 15,
+                    'Close Family (PR/Citizen Status in Australia) (Subclass 491)': 15,
+                    'No (Subclass 189)': 0
+                },
+                question7: { 'Yes': 5, 'No': 0 }
+            };
+
+            let additionalPoints = 0;
+            // Calculate points for all answered questions in step 6
+            for (let i = 1; i <= 7; i++) {
+                const questionSelected = document.querySelector(`#question${i} .option-btn.selected`);
+                if (questionSelected) {
+                    const selectedAnswer = questionSelected.textContent.trim();
+                    additionalPoints += questionPoints[`question${i}`][selectedAnswer] || 0;
+                }
+            }
+            scores.additional = additionalPoints;
         }
 
-        totalScore.textContent = currentScore; // Update the displayed score
+        // Calculate total score by adding all categories
+        currentScore = Object.values(scores).reduce((total, score) => total + score, 0);
+        
+        // Update the total score display
+        totalScore.textContent = currentScore;
+
+        // Update the summary section
+        updateSummary();
+
+        // Debug logging
+        console.log('Score Breakdown:', scores);
+        console.log('Total Score:', currentScore);
+    }
+
+    // Add this new function to update the summary text
+    function updateSummary() {
+        const summaryText = document.querySelector('.summary-text');
+        if (summaryText) {
+            summaryText.textContent = `Age Group: [${scores.age}], Education: [${scores.education}], Experience: [${scores.experience}], English Proficiency: [${scores.english}], Marital Status: [${scores.marital}], Additional Points: [${scores.additional}]`;
+        }
     }
 
     function updateStepIndicator() {
