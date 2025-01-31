@@ -1,99 +1,72 @@
 <?php
 session_start();
-
-// Calculate points
-function calculatePoints($data) {
-    $points = 0;
-    
-    // Age points
-    switch ($data['age']) {
-        case '18-24': $points += 25; break;
-        case '25-32': $points += 30; break;
-        case '33-39': $points += 25; break;
-        case '40-44': $points += 15; break;
-    }
-    
-    // Education points
-    switch ($data['education']) {
-        case 'graduation': $points += 15; break;
-        case 'phd': $points += 20; break;
-    }
-    
-    // Experience points
-    switch ($data['experience']) {
-        case '8+': $points += 15; break;
-        case '5-7': $points += 10; break;
-        case '3-4': $points += 5; break;
-    }
-    
-    // Language points
-    switch ($data['language_score']) {
-        case '8': $points += 20; break;
-        case '7': $points += 10; break;
-        case '6': $points += 0; break;
-    }
-    
-    // Marital status points
-    switch ($data['marital_status']) {
-        case 'single': $points += 10; break;
-        case 'married': $points += 5; break;
-    }
-    
-    // State/Region points
-    switch ($data['state_region']) {
-        case '190': $points += 5; break;
-        case '491': $points += 15; break;
-    }
-    
-    return $points;
-}
-
-$total_points = calculatePoints($_POST);
-
-// Replace the existing email sending code with:
 require_once 'mail-config.php';
 
-// After require_once 'mail-config.php', add error checking
-if (!file_exists('mail-config.php')) {
-    error_log("mail-config.php not found");
-    die("Mail configuration error");
+// Get all POST data
+$userData = $_POST;
+$total_points = $userData['total_points'];
+
+// Create detailed HTML email content
+$message = "
+<html>
+<head>
+<title>New PR Calculator Assessment</title>
+<style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 8px; text-align: left; border: 1px solid #ddd; }
+    th { background-color: #f2f2f2; }
+</style>
+</head>
+<body>
+    <h2>PR Points Calculator Assessment Details</h2>
+    
+    <h3>User Information</h3>
+    <table>
+        <tr><th>Name</th><td>{$userData['name']}</td></tr>
+        <tr><th>Email</th><td>{$userData['email']}</td></tr>
+        <tr><th>Mobile</th><td>{$userData['mobile']}</td></tr>
+        <tr><th>Total Points</th><td>{$total_points}</td></tr>
+    </table>
+
+    <h3>Assessment Details</h3>
+    <table>
+        <tr><th>Category</th><th>Selection</th></tr>
+        <tr><td>Age Group</td><td>{$userData['age_group']}</td></tr>
+        <tr><td>Education</td><td>{$userData['education']}</td></tr>
+        <tr><td>Experience</td><td>{$userData['experience']}</td></tr>
+        <tr><td>English Level</td><td>{$userData['english_level']}</td></tr>
+        <tr><td>Marital Status</td><td>{$userData['marital_status']}</td></tr>
+    </table>
+
+    <h3>Additional Questions</h3>
+    <table>
+        <tr><th>Question</th><th>Answer</th></tr>";
+
+// Add all additional questions
+for ($i = 1; $i <= 7; $i++) {
+    if (isset($userData["question_$i"])) {
+        $message .= "<tr><td colspan='2'>{$userData["question_$i"]}</td></tr>";
+    }
 }
 
-// Modify the email sending section
-try {
-    // Validate POST data exists
-    if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['mobile'])) {
-        throw new Exception("Required POST data missing");
-    }
-    
-    $to = "inquiry@easybordersimmigration.com";
-    $subject = "New PR Points Calculator Submission";
-    $message = "
-    <html>
-    <head>
-    <title>New PR Calculator Submission</title>
-    </head>
-    <body>
-    <h2>User Details:</h2>
-    <p>Name: {$_POST['name']}</p>
-    <p>Email: {$_POST['email']}</p>
-    <p>Mobile: {$_POST['mobile']}</p>
-    <p>Total Points: {$total_points}</p>
-    </body>
-    </html>
-    ";
+$message .= "</table>
+    <h3>Score Breakdown</h3>
+    <pre>" . print_r(json_decode($userData['score_breakdown'], true), true) . "</pre>
+</body>
+</html>";
 
-    $mail_sent = sendMail($to, $subject, $message);
-    
-    if (!$mail_sent) {
-        error_log("Failed to send email using sendMail() function");
-        // Optionally show user-friendly message
-        echo "<div class='alert alert-warning'>Note: We received your submission but email notification failed.</div>";
-    }
-} catch (Exception $e) {
-    error_log("Error in calculate-points.php: " . $e->getMessage());
-    // Optionally show user-friendly message
-    echo "<div class='alert alert-warning'>An error occurred but your points were calculated.</div>";
+// Send email using the configuration from mail-config.php
+$to = "inquiry@easybordersimmigration.com";
+$subject = "New PR Points Calculator Assessment - {$userData['name']}";
+
+$mailResult = sendMail($to, $subject, $message);
+
+// Send response back to JavaScript
+header('Content-Type: application/json');
+if ($mailResult) {
+    echo json_encode(['success' => true, 'message' => 'Assessment submitted successfully']);
+} else {
+    echo json_encode(['success' => false, 'message' => 'Failed to send assessment']);
 }
 ?>
 

@@ -344,4 +344,76 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize the first step
     backButton.disabled = true;
+
+    // Add this function to collect all user choices
+    function collectUserChoices() {
+        const choices = {
+            age: document.querySelector('#step1 .option-btn.selected')?.textContent || 'Not selected',
+            education: document.querySelector('#step2 .option-btn.selected')?.textContent || 'Not selected',
+            experience: document.querySelector('#step3 .option-btn.selected')?.textContent || 'Not selected',
+            english: document.querySelector('#step4 .option-btn.selected')?.textContent || 'Not selected',
+            marital: document.querySelector('#step5 .option-btn.selected')?.textContent || 'Not selected',
+            additionalQuestions: []
+        };
+
+        // Collect answers for all 7 questions in step 6
+        for (let i = 1; i <= 7; i++) {
+            const answer = document.querySelector(`#question${i} .option-btn.selected`)?.textContent || 'Not answered';
+            choices.additionalQuestions.push({
+                question: document.querySelector(`#question${i} h3`)?.textContent,
+                answer: answer
+            });
+        }
+
+        return choices;
+    }
+
+    // Modify the form submission handler
+    document.getElementById('userDetailsForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const userChoices = collectUserChoices();
+        const formData = new FormData();
+
+        // Add user details
+        formData.append('name', document.getElementById('name').value);
+        formData.append('email', document.getElementById('email').value);
+        formData.append('mobile', document.getElementById('mobile').value);
+        formData.append('total_points', document.getElementById('totalScore').textContent);
+
+        // Add all choices
+        formData.append('age_group', userChoices.age);
+        formData.append('education', userChoices.education);
+        formData.append('experience', userChoices.experience);
+        formData.append('english_level', userChoices.english);
+        formData.append('marital_status', userChoices.marital);
+        
+        // Add additional questions
+        userChoices.additionalQuestions.forEach((q, index) => {
+            formData.append(`question_${index + 1}`, `${q.question}: ${q.answer}`);
+        });
+
+        // Add score breakdown
+        formData.append('score_breakdown', JSON.stringify(scores));
+
+        // Send data to PHP
+        fetch('calculate-points.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Thank you! Your assessment has been submitted successfully.');
+                // Optional: redirect to a thank you page
+                // window.location.href = 'thank-you.html';
+            } else {
+                alert('There was an error submitting your assessment. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error submitting your assessment. Please try again.');
+        });
+    });
 });
