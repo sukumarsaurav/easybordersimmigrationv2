@@ -102,7 +102,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Points Calculator Result</title>
+    <title>Australia Pr points Calculator Easy Immigration</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="number-carousel.css">
