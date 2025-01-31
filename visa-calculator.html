@@ -3,234 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visa Calculator - EasyBorders Immigration</title>
+    <title>Australia PR Points Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pr-style.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="breadcrumb.css">
     <link rel="stylesheet" href="number-carousel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .book-appointment,
-.visa-calculator {
-  padding: 60px 0;
-}
-
-.appointment-form,
-.calculator-form {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #f8f9fa;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: #0b1f47;
-  font-weight: 600;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-.form-group textarea {
-  height: 120px;
-}
-
-.btn-submit {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #0b1f47;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-submit:hover {
-  background-color: #ffd700;
-  color: #0b1f47;
-}
-
-.calculation-result {
-  margin-top: 30px;
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.calculation-result h2 {
-  color: #0b1f47;
-  margin-bottom: 15px;
-}
-
-#scoreBreakdown {
-  margin-top: 15px;
-}
-
-#scoreBreakdown ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#scoreBreakdown li {
-  margin-bottom: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .about-grid,
-  .services-grid,
-  .test-types,
-  .visa-types,
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .about-grid,
-  .services-grid,
-  .test-types,
-  .visa-types,
-  .contact-grid,
-  .appointment-form,
-  .calculator-form {
-    grid-template-columns: 1fr;
-  }
-}
-    </style>
 </head>
 <body>
+    <!-- Top Bar -->
     <div class="top-bar">
-        <div class="container">
-            <div class="contact-info">
-                <span>For FREE Consultation</span>
-                <div class="number-carousel">
-                    <div class="carousel-container">
-                        <div class="carousel-track">
-                            <a href="tel:+918586878899" class="phone-number">+91 858 687 8899</a>
-                            <a href="tel:+919659645927" class="phone-number">+91 965 964 5927</a>
-                            <a href="tel:+919953747187" class="phone-number">+91 995 374 7187</a>
-                            <a href="tel:+917838000996" class="phone-number">+91 783 800 0996</a>
-                            <a href="tel:+13154651248" class="phone-number">+1 (315) 465-1248</a>
-                            <a href="tel:+17869495757" class="phone-number">+1 (786) 949-5757</a>
-                        </div>
-                    </div>
+        <div class="number-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <a href="tel:+918586878899" class="phone-number">+91 858 687 8899</a>
+                    <a href="tel:+919659645927" class="phone-number">+91 965 964 5927</a>
+                    <a href="tel:+919953747187" class="phone-number">+91 995 374 7187</a>
+                    <a href="tel:+917838000996" class="phone-number">+91 783 800 0996</a>
+                    <a href="tel:+13154651248" class="phone-number">+1 (315) 465-1248 (USA)</a>
+                    <a href="tel:+17869495757" class="phone-number">+1 (786) 949-5757 (USA)</a>
                 </div>
-            </div>
-            <div class="action-buttons">
-                <a href="book-an-appointment.html" class="btn"><i class="far fa-calendar-alt"></i> Book An Appointment</a>
-                <a href="visa-calculator.html" class="btn active"><i class="fas fa-calculator"></i> Visa Calculator</a>
             </div>
         </div>
     </div>
 
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
-                <img src="/src/images/logo.jpeg" alt="Crosslands Logo">
+                <img src="src/images/logo.jpeg" alt="Easy Borders Immigration Logo">
             </div>
             <nav>
                 <button class="mobile-menu-button"><i class="fas fa-bars"></i></button>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/" class="active">Home</a></li>
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="english-test-preparation.html">English Test Preparation</a></li>
+                    <li><a href="english-preparation-test.html">English Test Preparation</a></li>
                     <li><a href="study-visa.html">Study Visa</a></li>
                     <li><a href="contact-us.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
+        <div class="sidebar-menu">
+            <button class="close-menu-button">&times;</button>
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="english-preparation-test.html">English Test Preparation</a></li>
+                <li><a href="study-visa.html">Study Visa</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+            <div class="sidebar-bottom">
+                <a href="book-an-appointment.html" class="sidebar-btn book-btn">
+                    <i class="fas fa-calendar-check"></i> Book Appointment
+                </a>
+            </div>
+        </div>
     </header>
 
-    <div class="breadcrumb">
-        <div class="container">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li>Visa Calculator</li>
-            </ul>
-        </div>
-    </div>
+    <!-- Main Content -->
+  
+        <div class="container calculator-container">
+            <div class="calculator-section">
+                <header>
+                    <h3>Points Calculator</h3>
+                    <h1>Calculate Your Points/Eligiblity For Australia PR</h1>
+                    <p class="subtitle">Let's Assess Your Profile!</p>
+                    <nav class="breadcrumb">
+                        <span>Home</span> /
+                        <span>Australia</span> /
+                        <span>Australia PR Points Calculator</span>
+                    </nav>
+                </header>
 
-    <main>
-        <section class="visa-calculator">
-            <div class="container">
-                <h1>Visa Calculator</h1>
-                <p>Use our visa calculator to estimate your eligibility for various study visas. Please note that this is a preliminary assessment and does not guarantee visa approval.</p>
-                <div class="calculator-form">
-                    <form id="visaCalculatorForm">
-                        <div class="form-group">
-                            <label for="country">Destination Country</label>
-                            <select id="country" name="country" required>
-                                <option value="">Select a country</option>
-                                <option value="australia">Australia</option>
-                                <option value="canada">Canada</option>
-                                <option value="uk">United Kingdom</option>
-                                <option value="usa">United States</option>
-                            </select>
+                <div class="calculator-content">
+                    <div class="step-indicator">
+                        <span class="step-text">STEP <span id="currentStep">1</span> OF 8</span>
+                        <div class="step-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
                         </div>
-                        <div class="form-group">
-                            <label for="age">Age</label>
-                            <input type="number" id="age" name="age" min="16" max="60" required>
+                    </div>
+
+                    <div class="form-container">
+                        <div class="step-content active" id="step1">
+                            <h2>Choose the Age Bracket You Fit in</h2>
+                            <div class="options-grid">
+                                <button class="option-btn">18 - 24</button>
+                                <button class="option-btn">25 - 32</button>
+                                <button class="option-btn">33 - 39</button>
+                                <button class="option-btn">40 - 44</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="education">Highest Education Level</label>
-                            <select id="education" name="education" required>
-                                <option value="">Select education level</option>
-                                <option value="high-school">High School</option>
-                                <option value="bachelors">Bachelor's Degree</option>
-                                <option value="masters">Master's Degree</option>
-                                <option value="phd">PhD</option>
-                            </select>
+                        <div class="step-content" id="step2" style="display: none;">
+                            <h2>Your Last Qualification</h2>
+                            <div class="options-grid">
+                                <button class="option-btn">PHD</button>
+                                <button class="option-btn">Masters</button>
+                                <button class="option-btn">Diploma after Bachelors</button>
+                                <button class="option-btn">Bachelors</button>
+                                <button class="option-btn">Diploma after Secondary</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="language-test">Language Test</label>
-                            <select id="language-test" name="language-test" required>
-                                <option value="">Select a test</option>
-                                <option value="ielts">IELTS</option>
-                                <option value="toefl">TOEFL</option>
-                                <option value="pte">PTE Academic</option>
-                            </select>
+                        <div class="step-content" id="step3" style="display: none;">
+                            <h2>Your Total Work Experience Outside Australia</h2>
+                            <div class="options-grid">
+                                <button class="option-btn">8 years or more</button>
+                                <button class="option-btn">5 - 7 years</button>
+                                <button class="option-btn">3 - 4 years</button>
+                                <button class="option-btn">Less than 3 years</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="language-score">Language Test Score</label>
-                            <input type="number" id="language-score" name="language-score" step="0.5" min="0" max="9" required>
+                        <div class="step-content" id="step4" style="display: none;">
+                            <h2>Your English Proficiency</h2>
+                            <div class="options-grid">
+                                <button class="option-btn">Superior English (Excellent)</button>
+                                <button class="option-btn">Proficient English (Very Good)</button>
+                                <button class="option-btn">Competent English (Good)</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="work-experience">Work Experience (years)</label>
-                            <input type="number" id="work-experience" name="work-experience" min="0" max="20" required>
+                        <div class="step-content" id="step5" style="display: none;">
+                            <h2>Your Marital Status</h2>
+                            <div class="options-grid">
+                                <button class="option-btn">Married</button>
+                                <button class="option-btn">Single</button>
+                            </div>
                         </div>
-                        <button type="submit" class="btn-submit">Calculate Eligibility</button>
-                    </form>
-                </div>
-                <div id="calculationResult" class="calculation-result" style="display: none;">
-                    <h2>Visa Eligibility Result</h2>
-                    <p id="resultMessage"></p>
-                    <div id="scoreBreakdown"></div>
-                    <p>Please note: This is a preliminary assessment based on the information provided. For a detailed evaluation, please <a href="book-an-appointment.html">book an appointment</a> with our visa experts.</p>
+                        <div class="step-content" id="step6" style="display: none;">
+                            <h2>Answer the Following Questions</h2>
+                            
+                            <!-- Question Navigation -->
+                            <div class="question-nav">
+                                <button class="question-nav-btn" data-question="1">Q1</button>
+                                <button class="question-nav-btn" data-question="2">Q2</button>
+                                <button class="question-nav-btn" data-question="3">Q3</button>
+                                <button class="question-nav-btn" data-question="4">Q4</button>
+                                <button class="question-nav-btn" data-question="5">Q5</button>
+                                <button class="question-nav-btn" data-question="6">Q6</button>
+                                <button class="question-nav-btn" data-question="7">Q7</button>
+                            </div>
+
+                            <div id="questionContainer">
+                                <div class="question" id="question1">
+                                    <h3>1. How many years of Experience Do you have in Australia?</h3>
+                                    <div class="options-grid">
+                                        <button class="option-btn">8 years or More</button>
+                                        <button class="option-btn">5 to 7 years</button>
+                                        <button class="option-btn">3 to 4 years</button>
+                                        <button class="option-btn">1 to 2 years</button>
+                                        <button class="option-btn">Less than 1 year</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="question" id="question2" style="display: none;">
+                                    <h3>2. Do you have study Experience of minimum 2 years in Australia?</h3>
+                                    <div class="options-grid">
+                                        <button class="option-btn">Yes</button>
+                                        <button class="option-btn">No</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="question" id="question3" style="display: none;">
+                                    <h3>3. Have You Studied Master by Research or PhD / Doctorate in Australia? (STEM Designated Programs)</h3>
+                                    <div class="options-grid">
+                                        <button class="option-btn">Yes</button>
+                                        <button class="option-btn">No</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="question" id="question4" style="display: none;">
+                                    <h3>4. Have You Qualified From Designated Regional Area in Australia?</h3>
+                                    <div class="options-grid">
+                                        <button class="option-btn">Yes</button>
+                                        <button class="option-btn">No</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="question" id="question5" style="display: none;">
+                                    <h3>5. Do You Hold a Credential Community Language Qualifications in any of these Languages? Punjabi/Telugu/Urdu/Tamil/Malayalam/Hindi/Bangla/Gujarati?</h3>
+                                    <div class="options-grid">
+                                        <button class="option-btn">Yes</button>
+                                        <button class="option-btn">No</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="question" id="question6" style="display: none;">
+                                    <h3>6. Choose Your Preference</h3>
+                                    <div class="options-grid">
+                                        <button class="option-btn">State/Territory (Subclass 190)</button>
+                                        <button class="option-btn">Regional State (Subclass 491)</button>
+                                        <button class="option-btn">Close Family (PR/Citizen Status in Australia) (Subclass 491)</button>
+                                        <button class="option-btn">No (Subclass 189)</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="question" id="question7" style="display: none;">
+                                    <h3>7. Did you complete professional year in Australia from ACS/Engineers Australia/CPA/IPA/CAANZ in last 4 years?</h3>
+                                    <div class="options-grid">
+                                        <button class="option-btn">Yes</button>
+                                        <button class="option-btn">No</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question progress indicator -->
+                            <div class="question-progress">
+                                <span id="questionProgress">Question 1 of 7</span>
+                            </div>
+                        </div>
+                        <div class="step-content" id="step7" style="display: none;">
+                            <h2>Enter Your Details</h2>
+                            <form id="userDetailsForm">
+                                <div class="form-group">
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" required placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" required placeholder="Enter your email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mobile">Mobile Number:</label>
+                                    <input type="tel" id="mobile" required placeholder="Enter your mobile number">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="navigation-buttons">
+                        <button class="btn back-btn" disabled>← BACK</button>
+                        <button class="btn next-btn">NEXT →</button>
+                    </div>
+
+                    <div class="summary-section">
+                        <p class="summary-text">
+                            Age Group: [25], Education: [15], Experience: [10], English Proficiency: [10], 
+                            Marital Status: [0], Understand Your Adaptability: [0 + 0 + 0 + 0 + 0 + 0],
+                            Your Spouse/Partner's English Proficiency: [0 + 0]
+                        </p>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+
+            <div class="score-card">
+                <div class="flag-section">
+                    <img src="src/images/flag/australia-flag.webp" alt="Australia Flag" class="aus-flag">
+                    <h3>Australia</h3>
+                </div>
+                <div class="score-section">
+                    <h4>Your Score</h4>
+                    <div class="score-display">
+                        <span id="totalScore">25</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
@@ -239,27 +277,15 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Company Profile</a></li>
-                        <li><a href="#">Vision & Values</a></li>
-                        <li><a href="#">License & Certifications</a></li>
-                        <li><a href="#">Our Achievements & Appreciations</a></li>
-                        <li><a href="#">Representations Across The Globe</a></li>
-                        <li><a href="#">Job Fair's & Events</a></li>
-                        <li><a href="#">Images</a></li>
-                        <li><a href="#">Videos</a></li>
                         <li><a href="#">Testimonials</a></li>
                         <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Events</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="#">Franchise</a></li>
-                        <li><a href="#">School Academy</a></li>
                         <li><a href="#">Jobs</a></li>
-                        <li><a href="#">International Offices</a></li>
                         <li><a href="#">Contact Us</a></li>
                         <li><a href="#">Policy</a></li>
                     </ul>
                 </div>
-    
+
                 <!-- Services -->
                 <div class="footer-col">
                     <h3>Services</h3>
@@ -270,120 +296,72 @@
                         <li><a href="#">Study Visa</a></li>
                         <li><a href="#">Interview Preparation</a></li>
                     </ul>
-                    <div class="action-buttons">
-                        <a href="#" class="btn-action pay-online">Pay Online</a>
-                        <a href="#" class="btn-action erp-login">ERP Login</a>
-                    </div>
                 </div>
-    
+
                 <!-- Study Visa -->
                 <div class="footer-col">
                     <h3>Study Visa</h3>
                     <ul>
-                        <li><a href="#">Australia</a></li>
-                        <li><a href="#">Canada</a></li>
-                        <li><a href="#">Dubai</a></li>
-                        <li><a href="#">New Zealand</a></li>
-                        <li><a href="#">Singapore</a></li>
-                        <li><a href="#">UK</a></li>
-                        <li><a href="#">USA</a></li>
-                        <li><a href="#">Germany</a></li>
-                        <li><a href="#">Switzerland</a></li>
-                        <li><a href="#">France</a></li>
-                        <li><a href="#">Hungary</a></li>
-                        <li><a href="#">Italy</a></li>
-                        <li><a href="#">Cyprus</a></li>
-                        <li><a href="#">Malaysia</a></li>
-                        <li><a href="#">Thailand</a></li>
+                        <li><a href="study-visa/austrilia.html">Australia</a></li>
+                        <li><a href="study-visa/canada.html">Canada</a></li>
+                        <li><a href="study-visa/new-zealand.html">New Zealand</a></li>
+                        <li><a href="study-visa/singapore.html">Singapore</a></li>
+                        <li><a href="study-visa/germany.html">Germany</a></li>
+                        <li><a href="study-visa/switzerland.html">Switzerland</a></li>
+                        <li><a href="study-visa/france.html">France</a></li>
                     </ul>
                 </div>
-    
+
                 <!-- English Test Preparation -->
                 <div class="footer-col">
                     <h3>English Test Preparation</h3>
                     <ul>
-                        <li><a href="#">IELTS</a></li>
-                        <li><a href="#">PTE</a></li>
-                        <li><a href="#">CAEL</a></li>
-                        <li><a href="#">CELPIP</a></li>
-                        <li><a href="#">OET</a></li>
-                        <li><a href="#">TOEFL</a></li>
-                        <li><a href="#">Spoken English & Personality Development</a></li>
-                        <li><a href="#">Exam Book – BD – IDP - CAEL/ CELPIP / PTE Voucher</a></li>
+                        <li><a href="english-preparation-test/ilets.html">IELTS</a></li>
+                        <li><a href="english-preparation-test/pte.html">PTE</a></li>
+                        <li><a href="english-preparation-test/cael.html">CAEL</a></li>
+                        <li><a href="english-preparation-test/celpip.html">CELPIP</a></li>
+                        <li><a href="english-preparation-test/oet.html">OET</a></li>
+                        <li><a href="english-preparation-test/tofel.html">TOEFL</a></li>
+                        <li><a href="english-preparation-test/spoken-english-and-personality-development.html">Spoken
+                                English & Personality Development</a></li>
                     </ul>
                     <h3 class="migration-title">Migration</h3>
                     <ul>
-                        <li><a href="#">Australia</a></li>
-                        <li><a href="#">Australia Job Search Visa</a></li>
-                        <li><a href="#">Canada</a></li>
-                        <li><a href="#">Germany Job Search Visa</a></li>
+                        <li><a href="migration/australia.html">Australia</a></li>
+                        <li><a href="migration/canada.html">Canada</a></li>
+                        <li><a href="migration/germany-job-search-visa.html">Germany Job Search Visa</a></li>
                     </ul>
                 </div>
-    
+
                 <!-- Contact & Branches -->
                 <div class="footer-col">
                     <h3>Contact Us</h3>
                     <div class="contact-info">
-                        <p>Crossland Education & Careers SCO 85, Near Municipal Market, Sector 17C, Chandigarh, 160017</p>
-                        <p>Call: 090717 75577</p>
+                        <p>WZ-481 Shiv Nagar, near Jail Road, New Delhi-110058</p>
                     </div>
                     <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.2974034410313!2d76.77719631544383!3d30.740757781633387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed7d0f5ff98f%3A0x8f29df24c3ca8d3b!2sCrossland%20Education%20%26%20Careers!5e0!3m2!1sen!2sin!4v1643051834567!5m2!1sen!2sin" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218.87630300551004!2d77.09561940226342!3d28.6291372569422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04a3f7abe5df%3A0x2305c17c54f27f73!2s481%2C%20Pocket%205%2C%20Shiv%20Nagar%2C%20Janakpuri%2C%20New%20Delhi%2C%20Delhi%2C%20110058!5e0!3m2!1sen!2sin!4v1737735011636!5m2!1sen!2sin"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
                         </iframe>
                     </div>
                 </div>
-    
+
                 <!-- Our Branches -->
                 <div class="footer-col">
                     <h3>Our Branches</h3>
                     <div class="branches">
                         <div class="country">
-                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-22%20at%2010.30.14%E2%80%AFPM-cDM5I8hoKbB9Jo6DUBdOvoyH1O0IWe.png" alt="India Flag" class="flag">
+                            <img src="/src/images/flag/indian-flag.png" alt="India Flag" class="flag">
                             <span>INDIA</span>
                         </div>
-                        <h4>Punjab</h4>
+                        <h4>Delhi</h4>
                         <ul>
-                            <li>Chandigarh</li>
-                            <li>Adampur</li>
-                            <li>Bathinda</li>
-                            <li>Barnala</li>
-                            <li>Dasuya</li>
-                            <li>Dirba</li>
-                            <li>Ferozepur</li>
-                            <li>Gurdaspur</li>
-                            <li>Gidderbaha</li>
-                            <li>Mukstar</li>
-                            <li>Patiala</li>
+                            <li><a href="/branches/india/delhi/shiv-nagar-branch.html">Shiv Nagar</a></li>
                         </ul>
-                        <h4>Haryana</h4>
-                        <ul>
-                            <li>Hisar</li>
-                        </ul>
-                        <h4>Himachal Pradesh</h4>
-                        <ul>
-                            <li>Nalagarh</li>
-                            <li>Una</li>
-                        </ul>
-                        <div class="international-offices">
-                            <div class="office">
-                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-22%20at%2010.30.14%E2%80%AFPM-cDM5I8hoKbB9Jo6DUBdOvoyH1O0IWe.png" alt="Canada Flag" class="flag">
-                                <span>Canada - Vancouver</span>
-                            </div>
-                            <div class="office">
-                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-22%20at%2010.30.14%E2%80%AFPM-cDM5I8hoKbB9Jo6DUBdOvoyH1O0IWe.png" alt="Thailand Flag" class="flag">
-                                <span>Thailand - Bangkok</span>
-                            </div>
-                            <div class="office">
-                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-22%20at%2010.30.14%E2%80%AFPM-cDM5I8hoKbB9Jo6DUBdOvoyH1O0IWe.png" alt="Malawi Flag" class="flag">
-                                <span>Malawi - Blantyre</span>
-                            </div>
-                        </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -391,9 +369,9 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="copyright">
-                    <p>Copyright © 2020 EsayBorderImmigration. All rights reserved</p>
+                    <p>Copyright © 2020 EsayBordersImmigration. All rights reserved</p>
                     <p>Designed by Suku</p>
-               
+
                 </div>
                 <div class="social-links">
                     <span>Get Social with us</span>
@@ -401,13 +379,22 @@
                     <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
                     <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
                     <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Social Media Sidebar -->
+    <div class="social-sidebar">
+        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <script src="pr-point calculator.js"></script>
 </body>
 </html>
-
