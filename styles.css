@@ -835,3 +835,19 @@
     background-color: #ffd700;
     color: #0b1f47;
 }
+.whatsapp-button {
+   
+    animation: zoom 1.5s infinite;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
