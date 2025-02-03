@@ -404,8 +404,10 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                // Hide calculator and show results
+                // Hide calculator section
                 document.querySelector('.calculator-section').style.display = 'none';
+                
+                // Show results container
                 const resultsContainer = document.getElementById('resultsContainer');
                 resultsContainer.style.display = 'block';
                 
@@ -422,8 +424,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><span>Additional Points:</span> <span>${scores.additional}</span></li>
                 `;
 
-                // Scroll to results
-                resultsContainer.scrollIntoView({ behavior: 'smooth' });
+                // Smooth scroll to results
+                resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else {
                 alert('There was an error submitting your assessment. Please try again.');
             }
