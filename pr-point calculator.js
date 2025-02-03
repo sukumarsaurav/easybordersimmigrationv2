@@ -375,11 +375,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const userChoices = collectUserChoices();
         const formData = new FormData();
 
-        // Add user details and choices to formData
+        // Add user details
         formData.append('name', document.getElementById('name').value);
         formData.append('email', document.getElementById('email').value);
         formData.append('mobile', document.getElementById('mobile').value);
         formData.append('total_points', document.getElementById('totalScore').textContent);
+
+        // Add assessment choices
         formData.append('age_group', userChoices.age);
         formData.append('education', userChoices.education);
         formData.append('experience', userChoices.experience);
@@ -395,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('score_breakdown', JSON.stringify(scores));
 
         // Send data to PHP
-        fetch('calculate-points.php', {
+        fetch('process-calculator.php', {
             method: 'POST',
             body: formData
         })
