@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="number-carousel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
@@ -64,10 +66,10 @@
     </header>
 
     <!-- Main Content -->
-  
-        <div class="container calculator-container">
-            <div class="calculator-section">
-                <!-- <header>
+
+    <div class="container calculator-container">
+        <div class="calculator-section">
+            <!-- <header>
                     <h3>Points Calculator</h3>
                     <h1>Calculate Your Points/Eligiblity For Australia PR</h1>
                     <p class="subtitle">Let's Assess Your Profile!</p>
@@ -78,233 +80,237 @@
                     </nav>
                 </header> -->
 
-                <div class="calculator-content">
-                    <div class="step-indicator">
-                        <span class="step-text">STEP <span id="currentStep">1</span> OF 8</span>
-                        <div class="step-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-container">
-                        <div class="step-content active" id="step1">
-                            <h2>Choose the Age Bracket You Fit in</h2>
-                            <div class="options-grid">
-                                <button class="option-btn">18 - 24</button>
-                                <button class="option-btn">25 - 32</button>
-                                <button class="option-btn">33 - 39</button>
-                                <button class="option-btn">40 - 44</button>
-                            </div>
-                        </div>
-                        <div class="step-content" id="step2" style="display: none;">
-                            <h2>Your Last Qualification</h2>
-                            <div class="options-grid">
-                                <button class="option-btn">PHD</button>
-                                <button class="option-btn">Masters</button>
-                                <button class="option-btn">Diploma after Bachelors</button>
-                                <button class="option-btn">Bachelors</button>
-                                <button class="option-btn">Diploma after Secondary</button>
-                            </div>
-                        </div>
-                        <div class="step-content" id="step3" style="display: none;">
-                            <h2>Your Total Work Experience Outside Australia</h2>
-                            <div class="options-grid">
-                                <button class="option-btn">8 years or more</button>
-                                <button class="option-btn">5 - 7 years</button>
-                                <button class="option-btn">3 - 4 years</button>
-                                <button class="option-btn">Less than 3 years</button>
-                            </div>
-                        </div>
-                        <div class="step-content" id="step4" style="display: none;">
-                            <h2>Your English Proficiency</h2>
-                            <div class="options-grid">
-                                <button class="option-btn">Superior English (Excellent)</button>
-                                <button class="option-btn">Proficient English (Very Good)</button>
-                                <button class="option-btn">Competent English (Good)</button>
-                            </div>
-                        </div>
-                        <div class="step-content" id="step5" style="display: none;">
-                            <h2>Your Marital Status</h2>
-                            <div class="options-grid">
-                                <button class="option-btn">Married</button>
-                                <button class="option-btn">Single</button>
-                            </div>
-                        </div>
-                        <div class="step-content" id="step6" style="display: none;">
-                            <h2>Answer the Following Questions</h2>
-                            
-                            <!-- Question Navigation -->
-                            <div class="question-nav">
-                                <button class="question-nav-btn" data-question="1">Q1</button>
-                                <button class="question-nav-btn" data-question="2">Q2</button>
-                                <button class="question-nav-btn" data-question="3">Q3</button>
-                                <button class="question-nav-btn" data-question="4">Q4</button>
-                                <button class="question-nav-btn" data-question="5">Q5</button>
-                                <button class="question-nav-btn" data-question="6">Q6</button>
-                                <button class="question-nav-btn" data-question="7">Q7</button>
-                            </div>
-
-                            <div id="questionContainer">
-                                <div class="question" id="question1">
-                                    <h3>1. How many years of Experience Do you have in Australia?</h3>
-                                    <div class="options-grid">
-                                        <button class="option-btn">8 years or More</button>
-                                        <button class="option-btn">5 to 7 years</button>
-                                        <button class="option-btn">3 to 4 years</button>
-                                        <button class="option-btn">1 to 2 years</button>
-                                        <button class="option-btn">Less than 1 year</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="question" id="question2" style="display: none;">
-                                    <h3>2. Do you have study Experience of minimum 2 years in Australia?</h3>
-                                    <div class="options-grid">
-                                        <button class="option-btn">Yes</button>
-                                        <button class="option-btn">No</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="question" id="question3" style="display: none;">
-                                    <h3>3. Have You Studied Master by Research or PhD / Doctorate in Australia? (STEM Designated Programs)</h3>
-                                    <div class="options-grid">
-                                        <button class="option-btn">Yes</button>
-                                        <button class="option-btn">No</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="question" id="question4" style="display: none;">
-                                    <h3>4. Have You Qualified From Designated Regional Area in Australia?</h3>
-                                    <div class="options-grid">
-                                        <button class="option-btn">Yes</button>
-                                        <button class="option-btn">No</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="question" id="question5" style="display: none;">
-                                    <h3>5. Do You Hold a Credential Community Language Qualifications in any of these Languages? Punjabi/Telugu/Urdu/Tamil/Malayalam/Hindi/Bangla/Gujarati?</h3>
-                                    <div class="options-grid">
-                                        <button class="option-btn">Yes</button>
-                                        <button class="option-btn">No</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="question" id="question6" style="display: none;">
-                                    <h3>6. Choose Your Preference</h3>
-                                    <div class="options-grid">
-                                        <button class="option-btn">State/Territory (Subclass 190)</button>
-                                        <button class="option-btn">Regional State (Subclass 491)</button>
-                                        <button class="option-btn">Close Family (PR/Citizen Status in Australia) (Subclass 491)</button>
-                                        <button class="option-btn">No (Subclass 189)</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="question" id="question7" style="display: none;">
-                                    <h3>7. Did you complete professional year in Australia from ACS/Engineers Australia/CPA/IPA/CAANZ in last 4 years?</h3>
-                                    <div class="options-grid">
-                                        <button class="option-btn">Yes</button>
-                                        <button class="option-btn">No</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Question progress indicator -->
-                            <div class="question-progress">
-                                <span id="questionProgress">Question 1 of 7</span>
-                            </div>
-                        </div>
-                        <div class="step-content" id="step7" style="display: none;">
-                            <h2>Enter Your Details</h2>
-                            <form id="userDetailsForm">
-                                <div class="form-group">
-                                    <label for="name">Name:</label>
-                                    <input type="text" id="name" required placeholder="Enter your name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" required placeholder="Enter your email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="mobile">Mobile Number:</label>
-                                    <input type="tel" id="mobile" required placeholder="Enter your mobile number">
-                                </div>
-                                <button type="submit" class="submit-btn">Get Your Score Card</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="navigation-buttons">
-                        <button class="btn back-btn" disabled>← BACK</button>
-                        <button class="btn next-btn">NEXT →</button>
-                    </div>
-
-                    <div class="summary-section">
-                        <p class="summary-text">
-                            Age Group: [25], Education: [15], Experience: [10], English Proficiency: [10], 
-                            Marital Status: [0], Understand Your Adaptability: [0 + 0 + 0 + 0 + 0 + 0],
-                            Your Spouse/Partner's English Proficiency: [0 + 0]
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="score-card">
-                <div class="flag-section">
-                    <img src="src/images/flag/australia-flag.webp" alt="Australia Flag" class="aus-flag">
-                    <h3>Australia</h3>
-                </div>
-                <div class="score-section">
-                    <h4>Your Score</h4>
-                    <div class="score-display">
-                        <span id="totalScore">0</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Results container moved here -->
-            <div id="resultsContainer" style="display: none;" class="results-container">
-                <div class="results-header">
-                    <img src="src/images/flag/australia-flag.webp" alt="Australia Flag" class="results-flag">
-                    <h2>Your Australia PR Points Assessment</h2>
-                </div>
-                
-                <div class="score-breakdown">
-                    <div class="total-score">
-                        <h3>Total Points</h3>
-                        <div class="score-circle">
-                            <span id="finalScore">0</span>
-                        </div>
-                    </div>
-                    <div class="score-details">
-                        <h3>Score Breakdown</h3>
-                        <ul id="scoreBreakdown"></ul>
+            <div class="calculator-content">
+                <div class="step-indicator">
+                    <span class="step-text">STEP <span id="currentStep">1</span> OF 8</span>
+                    <div class="step-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
                 </div>
 
-                <div class="contact-section">
-                    <h3>Want to Discuss Your Options?</h3>
-                    <p>Our immigration experts are here to help you!</p>
-                    <div class="contact-buttons">
-                        <a href="tel:+918586878899" class="contact-btn call-btn">
-                            <i class="fas fa-phone"></i> Call Now
-                        </a>
-                        <a href="https://wa.me/+918586878899" class="contact-btn whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                        <button class="contact-btn enquiry-btn">
-                            <i class="fas fa-envelope"></i> Quick Enquiry
-                        </button>
+                <div class="form-container">
+                    <div class="step-content active" id="step1">
+                        <h2>Choose the Age Bracket You Fit in</h2>
+                        <div class="options-grid">
+                            <button class="option-btn">18 - 24</button>
+                            <button class="option-btn">25 - 32</button>
+                            <button class="option-btn">33 - 39</button>
+                            <button class="option-btn">40 - 44</button>
+                        </div>
                     </div>
+                    <div class="step-content" id="step2" style="display: none;">
+                        <h2>Your Last Qualification</h2>
+                        <div class="options-grid">
+                            <button class="option-btn">PHD</button>
+                            <button class="option-btn">Masters</button>
+                            <button class="option-btn">Diploma after Bachelors</button>
+                            <button class="option-btn">Bachelors</button>
+                            <button class="option-btn">Diploma after Secondary</button>
+                        </div>
+                    </div>
+                    <div class="step-content" id="step3" style="display: none;">
+                        <h2>Your Total Work Experience Outside Australia</h2>
+                        <div class="options-grid">
+                            <button class="option-btn">8 years or more</button>
+                            <button class="option-btn">5 - 7 years</button>
+                            <button class="option-btn">3 - 4 years</button>
+                            <button class="option-btn">Less than 3 years</button>
+                        </div>
+                    </div>
+                    <div class="step-content" id="step4" style="display: none;">
+                        <h2>Your English Proficiency</h2>
+                        <div class="options-grid">
+                            <button class="option-btn">Superior English (Excellent)</button>
+                            <button class="option-btn">Proficient English (Very Good)</button>
+                            <button class="option-btn">Competent English (Good)</button>
+                        </div>
+                    </div>
+                    <div class="step-content" id="step5" style="display: none;">
+                        <h2>Your Marital Status</h2>
+                        <div class="options-grid">
+                            <button class="option-btn">Married</button>
+                            <button class="option-btn">Single</button>
+                        </div>
+                    </div>
+                    <div class="step-content" id="step6" style="display: none;">
+                        <h2>Answer the Following Questions</h2>
+
+                        <!-- Question Navigation -->
+                        <div class="question-nav">
+                            <button class="question-nav-btn" data-question="1">Q1</button>
+                            <button class="question-nav-btn" data-question="2">Q2</button>
+                            <button class="question-nav-btn" data-question="3">Q3</button>
+                            <button class="question-nav-btn" data-question="4">Q4</button>
+                            <button class="question-nav-btn" data-question="5">Q5</button>
+                            <button class="question-nav-btn" data-question="6">Q6</button>
+                            <button class="question-nav-btn" data-question="7">Q7</button>
+                        </div>
+
+                        <div id="questionContainer">
+                            <div class="question" id="question1">
+                                <h3>1. How many years of Experience Do you have in Australia?</h3>
+                                <div class="options-grid">
+                                    <button class="option-btn">8 years or More</button>
+                                    <button class="option-btn">5 to 7 years</button>
+                                    <button class="option-btn">3 to 4 years</button>
+                                    <button class="option-btn">1 to 2 years</button>
+                                    <button class="option-btn">Less than 1 year</button>
+                                </div>
+                            </div>
+
+                            <div class="question" id="question2" style="display: none;">
+                                <h3>2. Do you have study Experience of minimum 2 years in Australia?</h3>
+                                <div class="options-grid">
+                                    <button class="option-btn">Yes</button>
+                                    <button class="option-btn">No</button>
+                                </div>
+                            </div>
+
+                            <div class="question" id="question3" style="display: none;">
+                                <h3>3. Have You Studied Master by Research or PhD / Doctorate in Australia? (STEM
+                                    Designated Programs)</h3>
+                                <div class="options-grid">
+                                    <button class="option-btn">Yes</button>
+                                    <button class="option-btn">No</button>
+                                </div>
+                            </div>
+
+                            <div class="question" id="question4" style="display: none;">
+                                <h3>4. Have You Qualified From Designated Regional Area in Australia?</h3>
+                                <div class="options-grid">
+                                    <button class="option-btn">Yes</button>
+                                    <button class="option-btn">No</button>
+                                </div>
+                            </div>
+
+                            <div class="question" id="question5" style="display: none;">
+                                <h3>5. Do You Hold a Credential Community Language Qualifications in any of these
+                                    Languages? Punjabi/Telugu/Urdu/Tamil/Malayalam/Hindi/Bangla/Gujarati?</h3>
+                                <div class="options-grid">
+                                    <button class="option-btn">Yes</button>
+                                    <button class="option-btn">No</button>
+                                </div>
+                            </div>
+
+                            <div class="question" id="question6" style="display: none;">
+                                <h3>6. Choose Your Preference</h3>
+                                <div class="options-grid">
+                                    <button class="option-btn">State/Territory (Subclass 190)</button>
+                                    <button class="option-btn">Regional State (Subclass 491)</button>
+                                    <button class="option-btn">Close Family (PR/Citizen Status in Australia) (Subclass
+                                        491)</button>
+                                    <button class="option-btn">No (Subclass 189)</button>
+                                </div>
+                            </div>
+
+                            <div class="question" id="question7" style="display: none;">
+                                <h3>7. Did you complete professional year in Australia from ACS/Engineers
+                                    Australia/CPA/IPA/CAANZ in last 4 years?</h3>
+                                <div class="options-grid">
+                                    <button class="option-btn">Yes</button>
+                                    <button class="option-btn">No</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question progress indicator -->
+                        <div class="question-progress">
+                            <span id="questionProgress">Question 1 of 7</span>
+                        </div>
+                    </div>
+                    <div class="step-content" id="step7" style="display: none;">
+                        <h2>Enter Your Details</h2>
+                        <form id="userDetailsForm">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" required placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" required placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number:</label>
+                                <input type="tel" id="mobile" required placeholder="Enter your mobile number">
+                            </div>
+                            <button type="submit" class="submit-btn">Get Your Score Card</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn back-btn" disabled>← BACK</button>
+                    <button class="btn next-btn">NEXT →</button>
+                </div>
+
+                <div class="summary-section">
+                    <p class="summary-text">
+                        Age Group: [25], Education: [15], Experience: [10], English Proficiency: [10],
+                        Marital Status: [0], Understand Your Adaptability: [0 + 0 + 0 + 0 + 0 + 0],
+                        Your Spouse/Partner's English Proficiency: [0 + 0]
+                    </p>
                 </div>
             </div>
         </div>
-  
+
+        <div class="score-card">
+            <div class="flag-section">
+                <img src="src/images/flag/australia-flag.webp" alt="Australia Flag" class="aus-flag">
+                <h3>Australia</h3>
+            </div>
+            <div class="score-section">
+                <h4>Your Score</h4>
+                <div class="score-display">
+                    <span id="totalScore">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results container moved here -->
+        <div id="resultsContainer" style="display: none;" class="results-container">
+            <div class="results-header">
+                <img src="src/images/flag/australia-flag.webp" alt="Australia Flag" class="results-flag">
+                <h2>Your Australia PR Points Assessment</h2>
+            </div>
+
+            <div class="score-breakdown">
+                <div class="total-score">
+                    <h3>Total Points</h3>
+                    <div class="score-circle">
+                        <span id="finalScore">0</span>
+                    </div>
+                </div>
+                <div class="score-details">
+                    <h3>Score Breakdown</h3>
+                    <ul id="scoreBreakdown"></ul>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h3>Want to Discuss Your Options?</h3>
+                <p>Our immigration experts are here to help you!</p>
+                <div class="contact-buttons">
+                    <a href="tel:+918586878899" class="contact-btn call-btn">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                    <a href="https://wa.me/+918586878899" class="contact-btn whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <button class="contact-btn enquiry-btn">
+                        <i class="fas fa-envelope"></i> Quick Enquiry
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Footer -->
     <footer class="main-footer">
@@ -379,9 +385,8 @@
                     </div>
                     <div class="map-container">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218.87630300551004!2d77.09561940226342!3d28.6291372569422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04a3f7abe5df%3A0x2305c17c54f27f73!2s481%2C%20Pocket%205%2C%20Shiv%20Nagar%2C%20Janakpuri%2C%20New%20Delhi%2C%20Delhi%2C%20110058!5e0!3m2!1sen!2sin!4v1737735011636!5m2!1sen!2sin"
-                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
-                        </iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.1152386910353!2d77.109873!3d28.6263081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4e36b827aa2473c9%3A0x8d09f61b0e08f889!2sEasy%20Borders%20Immigration!5e0!3m2!1sen!2sin!4v1738863163199!5m2!1sen!2sin"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
 
@@ -395,7 +400,7 @@
                         </div>
                         <h4>Delhi</h4>
                         <ul>
-                            <li><a href="/branches/india/delhi/shiv-nagar-branch.html">Shiv Nagar</a></li>
+                            <li><a href="/branches/india/delhi/Hari-nagar-branch.html">Hari Nagar</a></li>
                         </ul>
 
 
@@ -435,4 +440,5 @@
 
     <script src="pr-point calculator.js"></script>
 </body>
+
 </html>
