@@ -1,79 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+// Include database connection
+require_once 'db.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Borders Immigration - Education Consultancy</title>
-    <link rel="stylesheet" href="styles.css">
+// Fetch SEO data from the database
+$query = "SELECT * FROM seo WHERE page = 'index'";
+$result = mysqli_query($conn, $query);
+$seoData = mysqli_fetch_assoc($result);
 
-    <link rel="stylesheet" href="why-choose-us.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="pr-visa-section.css">
-    <link rel="stylesheet" href="updates.css">
-    <link rel="stylesheet" href="number-carousel.css">
-    <link rel="stylesheet" href="herostyle.css">
-    <link rel="stylesheet" href="studyvisastyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+// Set the page title
+$pageTitle = $seoData['title'] ?? 'Easy Borders Immigration - Education Consultancy';
 
-<body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="number-carousel">
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <a href="tel:+91-8586878899" class="phone-number">+91 858 687 8899</a>
-                    <a href="tel:+91-9650645927" class="phone-number">+91 965 064 5927</a>
-                    <a href="tel:+91-9953747187" class="phone-number">+91 995 374 7187</a>
-                    <a href="tel:+91-7838000996" class="phone-number">+91 783 800 0996</a>
-                    <a href="tel:+13154651248" class="phone-number">+1 (315) 465-1248 (USA)</a>
-                    <a href="tel:+17869495757" class="phone-number">+1 (786) 949-5757 (USA)</a>
-                </div>
-            </div>
-        </div>
-    </div>
+include 'src/includes/header.php';
+?>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="/">
-                <img src="src/images/logo.jpeg" alt="Easy Borders Immigration Logo">
-            </a>
-            </div>
-            <nav>
-                <button class="mobile-menu-button"><i class="fas fa-bars"></i></button>
-                <ul>
-                    <li><a href="/" class="active">Home</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="english-preparation-test.html">English Test Preparation</a></li>
-                    <li><a href="study-visa.html">Study Visa</a></li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="sidebar-menu">
-            <button class="close-menu-button">&times;</button>
-            <ul>
-                <li><a href="/" class="active">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="english-preparation-test.html">English Test Preparation</a></li>
-                <li><a href="study-visa.html">Study Visa</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
-            </ul>
-            <div class="sidebar-bottom">
-                <a href="book-an-appointment.html" class="sidebar-btn book-btn">
-                    <i class="fas fa-calendar-check"></i> Book Appointment
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
+  <!-- Hero Section -->
+  <section class="hero">
         <div class="carousel">
             <div class="carousel-slide active">
                 <img src="/src/images/hero/1.png" alt="Hero Image 1">
@@ -99,8 +40,9 @@
         </div>
     </section>
 
-    <!-- English Test Preparation Section -->
-    <section class="test-prep">
+<!-- Other sections... -->
+  <!-- English Test Preparation Section -->
+  <section class="test-prep">
         <div class="container">
             <h2>English Test Preparation</h2>
             <p>Easy Borders Immigration gives you the freedom to explore exciting new opportunities, and our range of
@@ -408,8 +350,8 @@
             </div>
         </div>
     </section>
-    <!-- Add this section after the study-visa section -->
-    <section class="why-choose">
+     <!-- Add this section after the study-visa section -->
+     <section class="why-choose">
         <div class="container">
             <h2 class="section-title">
                 <span>WHY CHOOSE</span>
@@ -485,8 +427,8 @@
             </div>
         </div>
     </section>
-    <!-- Services Section -->
-    <section class="services">
+      <!-- Services Section -->
+      <section class="services">
         <div class="container">
             <h2>Our Services</h2>
             <div class="service-grid">
@@ -513,8 +455,8 @@
             </div>
         </div>
     </section>
-      <!-- Add this section after the PR visa sections -->
-      <section class="updates-section">
+       <!-- Add this section after the PR visa sections -->
+       <section class="updates-section">
         <div class="container">
             <h2 class="section-title">
                 <span>Trusted by Our Clients </span>
@@ -525,7 +467,6 @@
           
         </div>
     </section>
- 
     <section class="pr-visa-sections">
         <!-- Australia PR Visa Section -->
         <div class="australia-pr">
@@ -588,15 +529,6 @@
             </div>
         </div>
     </section>
-    <!-- Testimonials Section -->
-
- 
-    
-
-
-  
-
-    <!-- Contact Section -->
     <section class="contact">
         <div class="container">
             <h2>Contact Us</h2>
@@ -620,156 +552,4 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Quick Links -->
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="pages/testimonials.html">Testimonials</a></li>
-                        <li><a href="pages/faqs.html">FAQs</a></li>
-                        <li><a href="pages/blog.html">Blog</a></li>
-                        <li><a href="pages/jobs.html">Jobs</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
-                        <li><a href="pages/privacy-policy.html">Policy</a></li>
-                    </ul>
-                </div>
-
-                <!-- Services -->
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Career Counselling</a></li>
-                        <li><a href="#">CAPS Notes</a></li>
-                        <li><a href="#">English Test Preparation</a></li>
-                        <li><a href="#">Study Visa</a></li>
-                        <li><a href="#">Interview Preparation</a></li>
-                    </ul>
-                </div>
-
-                <!-- Study Visa -->
-                <div class="footer-col">
-                    <h3>Study Visa</h3>
-                    <ul>
-                        <li><a href="study-visa/austrilia.html">Australia</a></li>
-                        <li><a href="study-visa/canada.html">Canada</a></li>
-                        <li><a href="study-visa/new-zealand.html">New Zealand</a></li>
-                        <li><a href="study-visa/singapore.html">Singapore</a></li>
-                        <li><a href="study-visa/germany.html">Germany</a></li>
-                        <li><a href="study-visa/switzerland.html">Switzerland</a></li>
-                        <li><a href="study-visa/france.html">France</a></li>
-                    </ul>
-                </div>
-
-                <!-- English Test Preparation -->
-                <div class="footer-col">
-                    <h3>English Test Preparation</h3>
-                    <ul>
-                        <li><a href="english-preparation-test/ilets.html">IELTS</a></li>
-                        <li><a href="english-preparation-test/pte.html">PTE</a></li>
-                        <li><a href="english-preparation-test/cael.html">CAEL</a></li>
-                        <li><a href="english-preparation-test/celpip.html">CELPIP</a></li>
-                        <li><a href="english-preparation-test/oet.html">OET</a></li>
-                        <li><a href="english-preparation-test/tofel.html">TOEFL</a></li>
-                        <li><a href="english-preparation-test/spoken-english-and-personality-development.html">Spoken
-                                English & Personality Development</a></li>
-                    </ul>
-                    <h3 class="migration-title">Migration</h3>
-                    <ul>
-                        <li><a href="migration/australia.html">Australia</a></li>
-                        <li><a href="migration/canada.html">Canada</a></li>
-                        <li><a href="migration/germany-job-search-visa.html">Germany Job Search Visa</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact & Branches -->
-                <div class="footer-col">
-                    <h3>Contact Us</h3>
-                    <div class="contact-info">
-                        <p>WZ-406 Janak park near Sanatan Dharm Mandir Hari Nagar New Delhi 110064</p>
-                    </div>
-                    <div class="map-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.1152386910353!2d77.109873!3d28.6263081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4e36b827aa2473c9%3A0x8d09f61b0e08f889!2sEasy%20Borders%20Immigration!5e0!3m2!1sen!2sin!4v1738863163199!5m2!1sen!2sin"
-                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-
-                <!-- Our Branches -->
-                <div class="footer-col">
-                    <h3>Our Branches</h3>
-                    <div class="branches">
-                        <div class="country">
-                            <img src="/src/images/flag/indian-flag.png" alt="India Flag" class="flag">
-                            <span>INDIA</span>
-                        </div>
-                        <h4>Delhi</h4>
-                        <ul>
-                            <li><a href="/branches/india/delhi/Hari-nagar-branch.html">Hari Nagar</a></li>
-                        </ul>
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="copyright">
-                    <p>Copyright © 2020 EsayBordersImmigration. All rights reserved</p>
-                    <p>Designed by Suku</p>
-
-                </div>
-                <div class="social-links">
-                    <span>Get Social with us</span>
-                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Social Media Sidebar -->
-    <div class="floating-buttons">
-        <a href="visa-calculator.html" class="floating-btn calculator-btn" title="PR Points Calculator">
-            <i class="fas fa-calculator"></i>
-        </a>
-        <a href="#" class="floating-btn enquiry-btn" title="Quick Enquiry">
-            <i class="fas fa-envelope"></i>
-        </a>
-    </div>
-    <div class="enquiry-form" id="enquiryForm">
-        <div class="enquiry-header">
-            <h3>Quick Enquiry</h3>
-            <button class="close-enquiry">&times;</button>
-        </div>
-        <form>
-            <div class="form-group">
-                <input type="text" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <input type="tel" placeholder="Your Phone" required>
-            </div>
-            <div class="form-group">
-                <textarea placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </div>
-    <script src="hero-script.js"></script>
-
-    <script src="script.js"></script>
-    <script src="number-carousel.js"></script>
-</body>
-
-</html>
+<?php include 'src/includes/footer.php'; ?>

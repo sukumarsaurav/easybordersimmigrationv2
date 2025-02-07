@@ -3,409 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book an Appointment - EasyBorders Immigration</title>
+    <title>Book an Appointment - Easy Borders Immigration</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="number-carousel.css">
+    <link rel="stylesheet" href="breadcrumb.css">
+    <link rel="stylesheet" href="contact-us.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
     <style>
-        .book-appointment,
-.visa-calculator {
-  padding: 60px 0;
-}
-
-.appointment-form,
-.calculator-form {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #f8f9fa;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: #0b1f47;
-  font-weight: 600;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-.form-group textarea {
-  height: 120px;
-}
-
-.btn-submit {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #0b1f47;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-submit:hover {
-  background-color: #ffd700;
-  color: #0b1f47;
-}
-
-.calculation-result {
-  margin-top: 30px;
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.calculation-result h2 {
-  color: #0b1f47;
-  margin-bottom: 15px;
-}
-
-#scoreBreakdown {
-  margin-top: 15px;
-}
-
-#scoreBreakdown ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#scoreBreakdown li {
-  margin-bottom: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .about-grid,
-  .services-grid,
-  .test-types,
-  .visa-types,
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .about-grid,
-  .services-grid,
-  .test-types,
-  .visa-types,
-  .contact-grid,
-  .appointment-form,
-  .calculator-form {
-    grid-template-columns: 1fr;
-  }
-}
+        /* Custom styles */
+        .service-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .service-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .service-button:hover {
+            background-color: #0056b3;
+        }
+        #calendar {
+            margin: 20px 0;
+        }
+        .available-slots {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
+    <!-- Top Bar -->
     <div class="top-bar">
-        <div class="container">
-            <div class="contact-info">
-                <span>For FREE Consultation</span>
-                <div class="number-carousel">
-                    <div class="carousel-container">
-                        <div class="carousel-track">
-                            <a href="tel:+918586878899" class="phone-number">+91 858 687 8899</a>
-                            <a href="tel:+91-9650645927" class="phone-number">+91 965 064 5927</a>
-                            <a href="tel:+919953747187" class="phone-number">+91 995 374 7187</a>
-                            <a href="tel:+917838000996" class="phone-number">+91 783 800 0996</a>
-                            <a href="tel:+13154651248" class="phone-number">+1 (315) 465-1248</a>
-                            <a href="tel:+17869495757" class="phone-number">+1 (786) 949-5757</a>
-                        </div>
-                    </div>
+        <div class="number-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <a href="tel:+918586878899" class="phone-number">+91 858 687 8899</a>
+                    <a href="tel:+919650645927" class="phone-number">+91 965 064 5927</a>
+                    <a href="tel:+919953747187" class="phone-number">+91 995 374 7187</a>
+                    <a href="tel:+917838000996" class="phone-number">+91 783 800 0996</a>
+                    <a href="tel:+13154651248" class="phone-number">+1 (315) 465-1248 (USA)</a>
+                    <a href="tel:+17869495757" class="phone-number">+1 (786) 949-5757 (USA)</a>
                 </div>
-            </div>
-            <div class="action-buttons">
-                <a href="book-an-appointment.html" class="btn active"><i class="far fa-calendar-alt"></i> Book An Appointment</a>
-                <a href="visa-calculator.html" class="btn"><i class="fas fa-calculator"></i> Visa Calculator</a>
             </div>
         </div>
     </div>
 
-    <header>
+    <!-- Appointment Booking Section -->
+    <section class="appointment-booking">
         <div class="container">
-            <div class="logo">
-                <img src="/src/images/logo.jpeg" alt="Crosslands Logo">
+            <h2>Book an Appointment</h2>
+            <div class="service-buttons">
+                <button class="service-button" data-service="consultation">Consultation</button>
+                <button class="service-button" data-service="visa-assistance">Visa Assistance</button>
+                <button class="service-button" data-service="test-preparation">Test Preparation</button>
+                <button class="service-button" data-service="other">Other Services</button>
             </div>
-            <nav>
-                <button class="mobile-menu-button"><i class="fas fa-bars"></i></button>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="english-test-preparation.html">English Test Preparation</a></li>
-                    <li><a href="study-visa.html">Study Visa</a></li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <div class="breadcrumb">
-        <div class="container">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li>Book an Appointment</li>
-            </ul>
-        </div>
-    </div>
+            <!-- Step 2: Calendar -->
+            <div id="calendar" style="display:none;"></div>
 
-    <main>
-        <section class="book-appointment">
-            <div class="container">
-                <h1>Book an Appointment</h1>
-                <p>Schedule a free consultation with our expert counselors to discuss your study abroad plans.</p>
-                <div class="appointment-form">
-                    <form id="appointmentForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="date">Preferred Date</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="time">Preferred Time</label>
-                            <select id="time" name="time" required>
-                                <option value="">Select a time</option>
-                                <option value="09:00">09:00 AM</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="12:00">12:00 PM</option>
-                                <option value="14:00">02:00 PM</option>
-                                <option value="15:00">03:00 PM</option>
-                                <option value="16:00">04:00 PM</option>
-                                <option value="17:00">05:00 PM</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service</label>
-                            <select id="service" name="service" required>
-                                <option value="">Select a service</option>
-                                <option value="study-abroad">Study Abroad Counseling</option>
-                                <option value="visa-assistance">Visa Assistance</option>
-                                <option value="test-preparation">Test Preparation</option>
-                                <option value="career-counseling">Career Counseling</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Additional Information</label>
-                            <textarea id="message" name="message" rows="4"></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Book Appointment</button>
-                    </form>
-                </div>
+            <!-- Available Slots -->
+            <div class="available-slots" id="slots-step" style="display:none;">
+                <label for="available-slots">Available Time Slots:</label>
+                <select id="available-slots" name="available-slots" required>
+                    <option value="">Select a time slot</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
             </div>
-        </section>
-    </main>
 
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Quick Links -->
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Company Profile</a></li>
-                        <li><a href="#">Vision & Values</a></li>
-                        <li><a href="#">License & Certifications</a></li>
-                        <li><a href="#">Our Achievements & Appreciations</a></li>
-                        <li><a href="#">Representations Across The Globe</a></li>
-                        <li><a href="#">Job Fair's & Events</a></li>
-                        <li><a href="#">Images</a></li>
-                        <li><a href="#">Videos</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Franchise</a></li>
-                        <li><a href="#">School Academy</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">International Offices</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Policy</a></li>
-                    </ul>
-                </div>
-    
-                <!-- Services -->
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Career Counselling</a></li>
-                        <li><a href="#">CAPS Notes</a></li>
-                        <li><a href="#">English Test Preparation</a></li>
-                        <li><a href="#">Study Visa</a></li>
-                        <li><a href="#">Interview Preparation</a></li>
-                    </ul>
-                    <div class="action-buttons">
-                        <a href="#" class="btn-action pay-online">Pay Online</a>
-                        <a href="#" class="btn-action erp-login">ERP Login</a>
-                    </div>
-                </div>
-    
-                <!-- Study Visa -->
-                <div class="footer-col">
-                    <h3>Study Visa</h3>
-                    <ul>
-                        <li><a href="#">Australia</a></li>
-                        <li><a href="#">Canada</a></li>
-                        <li><a href="#">Dubai</a></li>
-                        <li><a href="#">New Zealand</a></li>
-                        <li><a href="#">Singapore</a></li>
-                        <li><a href="#">UK</a></li>
-                        <li><a href="#">USA</a></li>
-                        <li><a href="#">Germany</a></li>
-                        <li><a href="#">Switzerland</a></li>
-                        <li><a href="#">France</a></li>
-                        <li><a href="#">Hungary</a></li>
-                        <li><a href="#">Italy</a></li>
-                        <li><a href="#">Cyprus</a></li>
-                        <li><a href="#">Malaysia</a></li>
-                        <li><a href="#">Thailand</a></li>
-                    </ul>
-                </div>
-    
-                <!-- English Test Preparation -->
-                <div class="footer-col">
-                    <h3>English Test Preparation</h3>
-                    <ul>
-                        <li><a href="#">IELTS</a></li>
-                        <li><a href="#">PTE</a></li>
-                        <li><a href="#">CAEL</a></li>
-                        <li><a href="#">CELPIP</a></li>
-                        <li><a href="#">OET</a></li>
-                        <li><a href="#">TOEFL</a></li>
-                        <li><a href="#">Spoken English & Personality Development</a></li>
-                        <li><a href="#">Exam Book – BD – IDP - CAEL/ CELPIP / PTE Voucher</a></li>
-                    </ul>
-                    <h3 class="migration-title">Migration</h3>
-                    <ul>
-                        <li><a href="#">Australia</a></li>
-                        <li><a href="#">Australia Job Search Visa</a></li>
-                        <li><a href="#">Canada</a></li>
-                        <li><a href="#">Germany Job Search Visa</a></li>
-                    </ul>
-                </div>
-    
-                <!-- Contact & Branches -->
-                <div class="footer-col">
-                    <h3>Contact Us</h3>
-                    <div class="contact-info">
-                        <p>Crossland Education & Careers SCO 85, Near Municipal Market, Sector 17C, Chandigarh, 160017</p>
-                        <p>Call: 090717 75577</p>
-                    </div>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.2974034410313!2d76.77719631544383!3d30.740757781633387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed7d0f5ff98f%3A0x8f29df24c3ca8d3b!2sCrossland%20Education%20%26%20Careers!5e0!3m2!1sen!2sin!4v1643051834567!5m2!1sen!2sin" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy">
-                        </iframe>
-                    </div>
-                </div>
-    
-                <!-- Our Branches -->
-                <div class="footer-col">
-                    <h3>Our Branches</h3>
-                    <div class="branches">
-                        <div class="country">
-                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-22%20at%2010.30.14%E2%80%AFPM-cDM5I8hoKbB9Jo6DUBdOvoyH1O0IWe.png" alt="India Flag" class="flag">
-                            <span>INDIA</span>
-                        </div>
-                        <h4>Punjab</h4>
-                        <ul>
-                            <li>Chandigarh</li>
-                            <li>Adampur</li>
-                            <li>Bathinda</li>
-                            <li>Barnala</li>
-                            <li>Dasuya</li>
-                            <li>Dirba</li>
-                            <li>Ferozepur</li>
-                            <li>Gurdaspur</li>
-                            <li>Gidderbaha</li>
-                            <li>Mukstar</li>
-                            <li>Patiala</li>
-                        </ul>
-                        <h4>Haryana</h4>
-                        <ul>
-                            <li>Hisar</li>
-                        </ul>
-                        <h4>Himachal Pradesh</h4>
-                        <ul>
-                            <li>Nalagarh</li>
-                            <li>Una</li>
-                        </ul>
-                        <div class="international-offices">
-                            <div class="office">
-                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-22%20at%2010.30.14%E2%80%AFPM-cDM5I8hoKbB9Jo6DUBdOvoyH1O0IWe.png" alt="Canada Flag" class="flag">
-                                <span>Canada - Vancouver</span>
-                            </div>
-                            <div class="office">
-                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-22%20at%2010.30.14%E2%80%AFPM-cDM5I8hoKbB9Jo6DUBdOvoyH1O0IWe.png" alt="Thailand Flag" class="flag">
-                                <span>Thailand - Bangkok</span>
-                            </div>
-                            <div class="office">
-                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-22%20at%2010.30.14%E2%80%AFPM-cDM5I8hoKbB9Jo6DUBdOvoyH1O0IWe.png" alt="Malawi Flag" class="flag">
-                                <span>Malawi - Blantyre</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- User Details -->
+            <div class="form-group" id="user-details" style="display:none;">
+                <label for="user-name">Your Name:</label>
+                <input type="text" id="user-name" name="user-name" required>
+            </div>
+            <div class="form-group" id="user-email-group" style="display:none;">
+                <label for="user-email">Your Email:</label>
+                <input type="email" id="user-email" name="user-email" required>
+            </div>
+            <div class="form-group" id="user-phone-group" style="display:none;">
+                <label for="user-phone">Your Phone:</label>
+                <input type="tel" id="user-phone" name="user-phone" required>
+            </div>
+
+            <button type="submit" class="btn" id="book-appointment" style="display:none;">Book Appointment</button>
+            <div id="confirmation-message" style="display:none;">
+                <p>Your appointment has been booked successfully!</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="copyright">
-                    <p>Copyright © 2020 EsayBorderImmigration. All rights reserved</p>
-                    <p>Designed by Suku</p>
-               
-                </div>
-                <div class="social-links">
-                    <span>Get Social with us</span>
-                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Step 1: Choose Service
+            $('.service-button').on('click', function() {
+                const service = $(this).data('service');
+                $('#calendar').show();
+                $('#calendar').fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay'
+                    },
+                    selectable: true,
+                    selectHelper: true,
+                    select: function(start, end) {
+                        const selectedDate = moment(start).format('YYYY-MM-DD');
+                        $('#available-slots').html('<option value="">Loading...</option>'); // Loading state
+
+                        // Fetch available slots for the selected date (mocked for this example)
+                        fetch(`getAvailableSlots.php?date=${selectedDate}&service=${service}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                $('#available-slots').html('<option value="">Select a time slot</option>'); // Reset options
+                                data.slots.forEach(slot => {
+                                    const option = $('<option></option>').val(slot.id).text(slot.time);
+                                    $('#available-slots').append(option);
+                                });
+                                $('#slots-step').show();
+                                $('#user-details').show();
+                                $('#book-appointment').show();
+                            })
+                            .catch(error => {
+                                console.error('Error fetching slots:', error);
+                                $('#available-slots').html('<option value="">Error loading slots</option>');
+                            });
+
+                        $('#calendar').fullCalendar('unselect');
+                    }
+                });
+            });
+
+            // Handle form submission
+            $('#booking-form').on('submit', function(event) {
+                event.preventDefault();
+                const formData = new FormData(this);
+
+                // Send booking request (mocked for this example)
+                fetch('bookAppointment.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        $('#confirmation-message').show();
+                        this.reset(); // Reset the form
+                    } else {
+                        alert('Error booking appointment: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error booking appointment:', error);
+                    alert('An error occurred while booking your appointment.');
+                });
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <?php include 'src/includes/footer.php'; ?>
 </body>
 </html>
-
