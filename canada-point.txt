@@ -1,0 +1,82 @@
+1. Age (Maximum 110 points for single, 100 for married)
+Question: What is your age?
+
+Age	Points (Single)	Points (Married)
+Below 18	0	0
+18	99	90
+19	105	95
+20-29	110	100
+30	105	95
+31	99	90
+32	94	85
+33	88	80
+34	83	75
+35	77	70
+36	72	65
+37	66	60
+38	61	55
+39	55	50
+40	50	45
+41	39	35
+42	28	25
+43	17	15
+44	6	5
+45+	0	0
+2. Education (Maximum 150 points)
+Question: What is your highest level of education?
+
+Education Level	Points
+PhD	150
+Master’s degree	135
+Two or more post-secondary diplomas (one must be at least 3 years)	128
+Bachelor’s degree (3 years or more)	120
+Two-year diploma	98
+One-year diploma	90
+High school diploma	30
+3. First Official Language (English or French) (Maximum 136 points for single, 128 for married)
+Question: What are your language proficiency test results (IELTS/CELPIP/TEF/TCF)?
+
+CLB Level	Reading	Writing	Listening	Speaking	Points (Per Skill)
+CLB 10+	8.0+	7.5+	8.5+	7.5+	32 (Single) / 30 (Married)
+CLB 9	7.0	7.0	8.0	7.0	29 (Single) / 26 (Married)
+CLB 8	6.5	6.5	7.5	6.5	22
+CLB 7	6.0	6.0	6.0	6.0	16
+CLB 6	5.0	5.5	5.5	5.5	8
+CLB 5	4.0	5.0	5.0	5.0	4
+Second Official Language Bonus:
+If you achieve CLB 5 or higher in your second official language, you get 6 additional points per skill (Total: 24 points)
+
+4. Work Experience (Maximum 80 points)
+Question: How many years of full-time skilled work experience do you have (inside or outside Canada)?
+
+Experience (Years)	Points
+Less than 1	0
+1 year	40
+2 years	53
+3 years	64
+4 years	72
+5+ years	80
+5. Canadian Work Experience (Maximum 70 points)
+Question: Do you have Canadian work experience?
+
+Experience (Years)	Points
+Less than 1	0
+1 year	40
+2 years	53
+3 years	64
+4 years	72
+5+ years	70
+6. Spouse Factors (If Married) (Maximum 40 points)
+Question: Does your spouse have any of the following qualifications?
+
+Spouse Qualification	Points
+Spouse’s Language Proficiency (Each skill: 5 points)	Max 20
+Spouse’s Education	Max 10
+Spouse’s Canadian Work Experience	Max 10
+7. Additional Points (Maximum 600 points)
+Factor	Points Awarded
+Provincial Nomination (PNP)	600
+Arranged Employment in Canada	50 or 200
+Sibling in Canada	15
+French Language Proficiency (CLB 7+)	25 or 50
+Total Maximum CRS Score: 1200 Points

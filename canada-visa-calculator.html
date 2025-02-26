@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canada PR Points Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pr-style.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="number-carousel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Keep the same header structure as visa-calculator.html -->
+    
+    <div class="container calculator-container">
+        <div class="calculator-section">
+            <div class="calculator-content">
+                <div class="step-indicator">
+                    <span class="step-text">STEP <span id="currentStep">1</span> OF 9</span>
+                    <div class="step-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <!-- Step 1: Marital Status -->
+                    <div class="step-content active" id="step1">
+                        <h2>Are you married or single?</h2>
+                        <div class="options-grid">
+                            <button class="option-btn" data-status="single">Single</button>
+                            <button class="option-btn" data-status="married">Married</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Age -->
+                    <div class="step-content" id="step2" style="display: none;">
+                        <h2>What is your age?</h2>
+                        <div class="options-grid">
+                            <button class="option-btn">Below 18</button>
+                            <button class="option-btn">18</button>
+                            <button class="option-btn">19</button>
+                            <button class="option-btn">20-29</button>
+                            <button class="option-btn">30</button>
+                            <button class="option-btn">31</button>
+                            <button class="option-btn">32</button>
+                            <button class="option-btn">33</button>
+                            <button class="option-btn">34</button>
+                            <button class="option-btn">35</button>
+                            <button class="option-btn">36</button>
+                            <button class="option-btn">37</button>
+                            <button class="option-btn">38</button>
+                            <button class="option-btn">39</button>
+                            <button class="option-btn">40</button>
+                            <button class="option-btn">41</button>
+                            <button class="option-btn">42</button>
+                            <button class="option-btn">43</button>
+                            <button class="option-btn">44</button>
+                            <button class="option-btn">45+</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Education -->
+                    <div class="step-content" id="step3" style="display: none;">
+                        <h2>What is your highest level of education?</h2>
+                        <div class="options-grid">
+                            <button class="option-btn">PhD</button>
+                            <button class="option-btn">Master's degree</button>
+                            <button class="option-btn">Two or more post-secondary diplomas (one must be at least 3 years)</button>
+                            <button class="option-btn">Bachelor's degree (3 years or more)</button>
+                            <button class="option-btn">Two-year diploma</button>
+                            <button class="option-btn">One-year diploma</button>
+                            <button class="option-btn">High school diploma</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: First Official Language -->
+                    <div class="step-content" id="step4" style="display: none;">
+                        <h2>First Official Language (English/French)</h2>
+                        <div class="language-section">
+                            <h3>Overall CLB Score</h3>
+                            <div class="options-grid">
+                                <button class="option-btn" data-clb="10+">CLB 10+ (IELTS 8.0+)</button>
+                                <button class="option-btn" data-clb="9">CLB 9 (IELTS 7.0-7.5)</button>
+                                <button class="option-btn" data-clb="8">CLB 8 (IELTS 6.5)</button>
+                                <button class="option-btn" data-clb="7">CLB 7 (IELTS 6.0)</button>
+                                <button class="option-btn" data-clb="6">CLB 6 (IELTS 5.0-5.5)</button>
+                                <button class="option-btn" data-clb="5">CLB 5 (IELTS 4.0-4.5)</button>
+                                <button class="option-btn" data-clb="0">Below CLB 5</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add Work Experience Section -->
+                    <div class="step-content" id="step5" style="display: none;">
+                        <h2>Work Experience</h2>
+                        <div class="options-grid">
+                            <button class="option-btn" data-points="0">Less than 1 year</button>
+                            <button class="option-btn" data-points="40">1 year</button>
+                            <button class="option-btn" data-points="53">2 years</button>
+                            <button class="option-btn" data-points="64">3 years</button>
+                            <button class="option-btn" data-points="72">4 years</button>
+                            <button class="option-btn" data-points="80">5+ years</button>
+                        </div>
+                    </div>
+
+                    <!-- Add Canadian Experience Section -->
+                    <div class="step-content" id="step6" style="display: none;">
+                        <h2>Canadian Work Experience</h2>
+                        <div class="options-grid">
+                            <button class="option-btn" data-points="0">Less than 1 year</button>
+                            <button class="option-btn" data-points="40">1 year</button>
+                            <button class="option-btn" data-points="53">2 years</button>
+                            <button class="option-btn" data-points="64">3 years</button>
+                            <button class="option-btn" data-points="72">4 years</button>
+                            <button class="option-btn" data-points="70">5+ years</button>
+                        </div>
+                    </div>
+
+                    <!-- Spouse Factors Section (Only shown if married) -->
+                    <div class="step-content" id="step7" style="display: none;">
+                        <h2>Spouse Qualifications</h2>
+                        
+                        <!-- Spouse Language Proficiency -->
+                        <div class="language-section">
+                            <h3>Spouse's Language Proficiency</h3>
+                            <div class="options-grid">
+                                <button class="option-btn" data-points="20">CLB 7+ in all skills (Reading, Writing, Listening, Speaking)</button>
+                                <button class="option-btn" data-points="15">CLB 7+ in 3 skills</button>
+                                <button class="option-btn" data-points="10">CLB 7+ in 2 skills</button>
+                                <button class="option-btn" data-points="5">CLB 7+ in 1 skill</button>
+                                <button class="option-btn" data-points="0">Below CLB 7 in all skills</button>
+                            </div>
+                        </div>
+
+                        <!-- Spouse Education -->
+                        <div class="spouse-section">
+                            <h3>Spouse's Education</h3>
+                            <div class="options-grid">
+                                <button class="option-btn" data-points="10">Bachelor's degree or higher</button>
+                                <button class="option-btn" data-points="8">College diploma (2+ years)</button>
+                                <button class="option-btn" data-points="5">Secondary education (high school) or less</button>
+                            </div>
+                        </div>
+
+                        <!-- Spouse Canadian Work Experience -->
+                        <div class="spouse-section">
+                            <h3>Spouse's Canadian Work Experience</h3>
+                            <div class="options-grid">
+                                <button class="option-btn" data-points="10">3+ years</button>
+                                <button class="option-btn" data-points="5">1-2 years</button>
+                                <button class="option-btn" data-points="0">Less than 1 year</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Points Section -->
+                    <div class="step-content" id="step8" style="display: none;">
+                        <h2>Additional Points</h2>
+                        
+                        <!-- Provincial Nomination -->
+                        <div class="additional-section">
+                            <h3>Provincial Nomination (PNP)</h3>
+                            <div class="options-grid">
+                                <button class="option-btn" data-points="600">Yes</button>
+                                <button class="option-btn" data-points="0">No</button>
+                            </div>
+                        </div>
+
+                        <!-- Arranged Employment -->
+                        <div class="additional-section">
+                            <h3>Arranged Employment in Canada</h3>
+                            <div class="options-grid">
+                                <button class="option-btn" data-points="200">Yes (NOC 00)</button>
+                                <button class="option-btn" data-points="50">Yes (Other NOC)</button>
+                                <button class="option-btn" data-points="0">No</button>
+                            </div>
+                        </div>
+
+                        <!-- Sibling in Canada -->
+                        <div class="additional-section">
+                            <h3>Sibling in Canada (Citizen/PR)</h3>
+                            <div class="options-grid">
+                                <button class="option-btn" data-points="15">Yes</button>
+                                <button class="option-btn" data-points="0">No</button>
+                            </div>
+                        </div>
+
+                        <!-- French Language -->
+                        <div class="additional-section">
+                            <h3>French Language Proficiency</h3>
+                            <div class="options-grid">
+                                <button class="option-btn" data-points="50">CLB 7+ with NCLC 7+ in French and CLB 5+ in English</button>
+                                <button class="option-btn" data-points="25">CLB 7+ in French</button>
+                                <button class="option-btn" data-points="0">Below CLB 7 in French</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Move Submit Section to step 9 -->
+                    <div class="step-content" id="step9" style="display: none;">
+                        <h2>Submit Your Assessment</h2>
+                        <div class="submit-form">
+                            <div class="form-group">
+                                <label for="name">Full Name:</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number:</label>
+                                <input type="tel" id="mobile" required>
+                            </div>
+                            <button onclick="handleSubmit()" class="submit-btn">Submit Assessment</button>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="navigation-buttons">
+                        <button class="back-btn" disabled>Back</button>
+                        <button class="next-btn">Next</button>
+                    </div>
+                </div>
+
+                <!-- Current Score Display -->
+                <div class="score-display">
+                    <h3>Current CRS Score: <span id="totalScore">0</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keep the same footer structure as visa-calculator.html -->
+    
+    <script src="canada-calculator.js"></script>
+</body>
+</html> 
