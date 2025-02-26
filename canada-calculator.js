@@ -389,7 +389,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add this function to handle form submission
     function handleSubmit() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const mobile = document.getElementById('mobile').value;
+
+        // Basic validation
+        if (!name || !email || !mobile) {
+            alert('Please fill in all fields');
+            return;
+        }
+
         const formData = {
+            name: name,
+            email: email,
+            mobile: mobile,
             marital_status: maritalStatus,
             age_points: scores.age,
             education_points: scores.education,
@@ -415,6 +428,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             if (data.success) {
                 alert('Your assessment has been submitted successfully!');
+                // Optional: Reset form
+                document.getElementById('contactForm').reset();
             } else {
                 alert('Failed to submit assessment. Please try again.');
             }
@@ -424,4 +439,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('An error occurred. Please try again later.');
         });
     }
+
+    // Make handleSubmit available globally
+    window.handleSubmit = handleSubmit;
 }); 

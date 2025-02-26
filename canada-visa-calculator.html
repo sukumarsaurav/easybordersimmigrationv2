@@ -9,6 +9,68 @@
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="number-carousel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px 0;
+        }
+
+        .back-btn, .next-btn, .submit-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .next-btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .back-btn:hover, .next-btn:hover, .submit-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .back-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        /* Form group styles */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <!-- Keep the same header structure as visa-calculator.html -->
@@ -260,22 +322,22 @@
 
                     <!-- Move Submit Section to step 9 -->
                     <div class="step-content" id="step9" style="display: none;">
-                        <h2>Submit Your Assessment</h2>
-                        <div class="submit-form">
+                        <h2>Contact Information</h2>
+                        <form id="contactForm">
                             <div class="form-group">
                                 <label for="name">Full Name:</label>
-                                <input type="text" id="name" required>
+                                <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" id="email" required>
+                                <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
                                 <label for="mobile">Mobile Number:</label>
-                                <input type="tel" id="mobile" required>
+                                <input type="tel" id="mobile" name="mobile" required>
                             </div>
-                            <button onclick="handleSubmit()" class="submit-btn">Submit Assessment</button>
-                        </div>
+                            <button type="button" class="submit-btn" onclick="handleSubmit()">Submit Assessment</button>
+                        </form>
                     </div>
 
                     <!-- Navigation Buttons -->
