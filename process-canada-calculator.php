@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </body>
     </html>";
 
-    $to = "inquiry@easybordersimmigration.com";
+    $to = "support@easybordersimmigration.com";
     $subject = "New Canada PR Calculator Submission - {$formData['name']}";
     
     $mailResult = sendMail($to, $subject, $message);
