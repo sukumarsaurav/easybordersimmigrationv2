@@ -69,6 +69,8 @@
     
     <!-- Analytics -->
     <script src="/src/js/analytics.js"></script>
+    <script src="/src/js/dataLayer.js"></script>
+    <script src="/src/js/gtm-config.js"></script>
     
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="why-choose-us.css">

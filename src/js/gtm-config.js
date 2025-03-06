@@ -1,5 +1,6 @@
 // GTM Configuration
 const GTM_ID = 'GTM-KSHT33RH';
+const GA4_ID = 'G-3RP63ZP2RF';
 
 // GTM Head Script
 function loadGTMHead() {
@@ -25,8 +26,15 @@ function loadGTMBody() {
     document.body.insertBefore(noscript, document.body.firstChild);
 }
 
-// Initialize GTM
+// Initialize GTM and GA4
 document.addEventListener('DOMContentLoaded', function() {
     loadGTMHead();
     loadGTMBody();
+    
+    // Push initial GA4 configuration
+    window.dataLayer.push({
+        'ga4_config': {
+            'measurement_id': GA4_ID
+        }
+    });
 }); 
